@@ -1,0 +1,10 @@
+{
+  "curso": "2026-27",
+  "iteraciones": [
+    {
+      "fecha": "20260721",
+      "nota": "Primeras propuestas del curso 2026-27",
+      "propuestas": ["20260721-propuesta-1.xml", "20260721-propuesta-2.xml", "20260721-propuesta-3.xml"]
+    }
+  ]
+}
