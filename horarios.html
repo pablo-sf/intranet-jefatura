@@ -93,6 +93,9 @@
   tr.recreo td{background:var(--recreo);color:var(--gris);font-size:.72rem;padding:.18rem;
     background-image:repeating-linear-gradient(45deg,transparent 0 8px,#e7eae3 8px 9px)}
   .reunion .bloque{background:#eef2e2;border:1px dashed #bcd06a}
+  /* Clase compartida entre grupos o impartida por varios profesores */
+  td .bloque.compartida{box-shadow:inset 3px 0 0 rgba(0,103,120,.45)}
+  td .bloque.compartida .detalle{font-style:italic}
   #vacio, #cargando, #error{color:var(--gris);text-align:center;padding:2.2rem 0}
   #error{color:#a33}
 
@@ -194,7 +197,16 @@ function parsearGHC(texto){
 
   const sesiones = new Map();
   doc.querySelectorAll("sesionesLectivas > sesion").forEach(s => {
-    sesiones.set(s.getAttribute("id"), { materia: txt(s,"materia"), grupo: txt(s,"grupo") });
+    // Peñalara declara aquí las materias compartidas: una sesión tiene un grupo
+    // y un profesor "principales", y los demás cuelgan de otrosGrupos/otrosProfesores.
+    const otrosG = [...s.querySelectorAll("otrosGrupos > grupo")].map(g => g.textContent.trim());
+    const otrosP = [...s.querySelectorAll("otrosProfesores > profesor")].map(p => p.textContent.trim());
+    sesiones.set(s.getAttribute("id"), {
+      materia: txt(s,"materia"),
+      grupo:   txt(s,"grupo"),
+      grupos:      [txt(s,"grupo"),   ...otrosG].filter(Boolean),
+      profesores:  [txt(s,"profesor"), ...otrosP].filter(Boolean)
+    });
   });
 
   const reuniones = new Map();
@@ -215,11 +227,35 @@ function parsearGHC(texto){
     if (!franja) return;
     tr.querySelectorAll(":scope > aula").forEach(aula => {
       const ses = sesiones.get(txt(aula,"sesion"));
-      const prof = txt(aula,"profesor");
       if (!ses) return;
-      const base = { dia, ini:franja.ini, fin:franja.fin };
-      meter(porProf, prof,      {...base, materia:ses.materia, grupo:ses.grupo, detalle:ses.grupo});
-      meter(porGrupo, ses.grupo, {...base, materia:ses.materia, grupo:ses.grupo, detalle:prof});
+      const profAula = txt(aula,"profesor");
+      // El profesor del tramo puede no estar en la lista de la sesión: lo añadimos
+      const profesores = ses.profesores.includes(profAula)
+        ? ses.profesores : [profAula, ...ses.profesores];
+      const grupos = ses.grupos;
+      const base = { dia, ini:franja.ini, fin:franja.fin, materia:ses.materia };
+      const compartida = grupos.length > 1 || profesores.length > 1;
+
+      // Una clase compartida es UNA sola clase: aparece una vez en el horario de
+      // cada profesor implicado (mostrando todos los grupos) y una vez en el de
+      // cada grupo implicado (mostrando todos los profesores).
+      const masDeUnProf = profesores.length > 1;
+      profesores.forEach(p => {
+        const otros = profesores.filter(x => x !== p);
+        const notas = [];
+        if (grupos.length > 1) notas.push(`Grupos juntos: ${grupos.join(", ")}`);
+        if (otros.length)      notas.push(`Con: ${otros.join(", ")}`);
+        meter(porProf, p, {...base, grupo:ses.grupo, detalle: grupos.join(" · "),
+                           compartida, nota: notas.join(" · ")});
+      });
+      grupos.forEach(g => {
+        const otros = grupos.filter(x => x !== g);
+        const notas = [];
+        if (otros.length)   notas.push(`Junto a: ${otros.join(", ")}`);
+        if (masDeUnProf)    notas.push(`Profesores: ${profesores.join(", ")}`);
+        meter(porGrupo, g, {...base, grupo:ses.grupo, detalle: profesores.join(" · "),
+                            compartida, nota: notas.join(" · ")});
+      });
     });
     tr.querySelectorAll(":scope > reunion").forEach(re => {
       const nombre = re.textContent.trim();
@@ -439,7 +475,7 @@ function pintarCuadricula(datos){
       const aqui = items.filter(i => i.dia===d && i.ini===f.ini && i.fin===f.fin);
       if (!aqui.length) return "<td></td>";
       return "<td class='" + (aqui[0].reunion?"reunion":"") + "'>" + aqui.map(i =>
-        `<div class="bloque" style="background:${i.reunion?'':paleta.get(`${i.materia}|${i.grupo || ""}`)}">
+        `<div class="bloque${i.compartida?" compartida":""}"${i.nota?` title="${i.nota}"`:""} style="background:${i.reunion?'':paleta.get(`${i.materia}|${i.grupo || ""}`)}">
            <span class="materia">${i.materia}</span>
            <span class="detalle">${i.detalle}</span></div>`).join("") + "</td>";
     });
