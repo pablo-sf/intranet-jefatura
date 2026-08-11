@@ -75,6 +75,10 @@ y marca esa propuesta con ★. Las propuestas siguen visibles como archivo.
   dentro del horario de cada profesor.
 - Color por materia estable (mismo color para la misma asignatura).
 - Vistas por profesor y por curso, navegación ◀ ▶ e impresión.
+- "Imprimir" saca el horario que hay en pantalla. "Descargar todos (PDF)"
+  saca de una vez todos los horarios de la vista actual (los 28 profesores
+  o los 16 cursos) de la propuesta que estés viendo, uno por página: abre el
+  diálogo de impresión del navegador, ahí eliges "Guardar como PDF".
 
 ## Navegación entre páginas (patrón reutilizable)
 
