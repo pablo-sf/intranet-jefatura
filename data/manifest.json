@@ -25,6 +25,11 @@
       "fecha": "20260810",
       "nota": "Prpuestas revisadas del curso 2026-27",
       "propuestas": ["20260810-propuesta-1.xml", "20260810-propuesta-2.xml", "20260810-propuesta-3.xml", "20260810-propuesta-4.xml"]
+    },
+    {
+      "fecha": "20260811",
+      "nota": "Prpuestas revisadas del curso 2026-27",
+      "propuestas": ["20260811-propuesta-1.xml", "20260811-propuesta-2.xml", "20260811-propuesta-3.xml"]
     }
   ]
 }
