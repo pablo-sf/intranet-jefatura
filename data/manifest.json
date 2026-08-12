@@ -32,6 +32,13 @@
       "propuestas": ["20260811-propuesta-1.xml", "20260811-propuesta-2.xml", "20260811-propuesta-3.xml"],
       "ocultas":[],
       "aprobada":""
+    },
+    {
+      "fecha": "20260812",
+      "nota": "Propuestas revisadas del curso 2026-27",
+      "propuestas": ["20260812-propuesta-1.xml", "20260812-propuesta-2.xml", "20260812-propuesta-3.xml", "20260812-propuesta-4.xml"],
+      "ocultas":[],
+      "aprobada":""
     }
   ]
 }
