@@ -1,10 +1,37 @@
 {
   "curso": "2026-27",
   "iteraciones": [
-        {
-      "fecha": "20260811",
+    {
+      "fecha": "20260721",
+      "nota": "Primeras propuestas del curso 2026-27",
+      "propuestas": ["20260721-propuesta-1.xml", "20260721-propuesta-2.xml", "20260721-propuesta-3.xml"]
+    },
+    {
+      "fecha": "20260722",
       "nota": "Prpuestas revisadas del curso 2026-27",
-      "propuestas": ["20260811-propuesta-1.xml", "20260811-propuesta-2.xml"]
+      "propuestas": ["20260722-propuesta-1.xml", "20260722-propuesta-2.xml", "20260722-propuesta-3.xml"]
+    },
+    {
+      "fecha": "20260723",
+      "nota": "Prpuestas revisadas del curso 2026-27",
+      "propuestas": ["20260723-propuesta-1.xml", "20260723-propuesta-2.xml", "20260723-propuesta-3.xml", "20260723-propuesta-4.xml", "20260723-propuesta-5.xml", "20260723-propuesta-6.xml", "20260723-propuesta-7.xml", "20260723-propuesta-8.xml"]
+    },
+    {
+      "fecha": "20260724",
+      "nota": "Prpuestas revisadas del curso 2026-27",
+      "propuestas": ["20260724-propuesta-1.xml", "20260724-propuesta-2.xml", "20260724-propuesta-3.xml"]
+    },
+    {
+      "fecha": "20260810",
+      "nota": "Prpuestas revisadas del curso 2026-27",
+      "propuestas": ["20260810-propuesta-1.xml", "20260810-propuesta-2.xml", "20260810-propuesta-3.xml", "20260810-propuesta-4.xml"]
+    },
+    {
+      "fecha": "20260811",
+      "nota": "Propuestas revisadas del curso 2026-27",
+      "propuestas": ["20260811-propuesta-1.xml", "20260811-propuesta-2.xml", "20260811-propuesta-3.xml"],
+      "ocultas":[],
+      "aprobada":""
     }
   ]
 }
