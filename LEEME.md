@@ -67,6 +67,46 @@ Añade el campo `aprobada` a esa iteración con el nombre del XML elegido:
 Al hacer push, la página muestra arriba un banner "Horario definitivo"
 y marca esa propuesta con ★. Las propuestas siguen visibles como archivo.
 
+## Ocultar propuestas o iteraciones sin borrarlas
+
+El formato JSON **no admite comentarios** (`//` o `/* */` romperían el archivo).
+Para tener los XML subidos pero mostrar solo los que interesen, se usan dos
+campos. Los archivos siguen en el repositorio; simplemente no se muestran.
+
+**Ocultar propuestas sueltas** — añade `ocultas` con los nombres a esconder:
+
+```json
+{
+  "fecha": "20260722",
+  "propuestas": [
+    "20260722-propuesta-1.xml",
+    "20260722-propuesta-2.xml",
+    "20260722-propuesta-3.xml"
+  ],
+  "ocultas": ["20260722-propuesta-2.xml"]
+}
+```
+
+Se verán la 1 y la 3. Para volver a mostrar la 2, quítala de `ocultas`.
+
+**Ocultar una iteración entera** — añade `"oculta": true`:
+
+```json
+{
+  "fecha": "20260720",
+  "nota": "Borrador descartado",
+  "propuestas": ["20260720-propuesta-1.xml"],
+  "oculta": true
+}
+```
+
+Detalles a tener en cuenta:
+- Una iteración cuyas propuestas estén todas ocultas no aparece.
+- Si ocultas la propuesta marcada como `aprobada`, el banner de "Horario
+  definitivo" desaparece automáticamente (no anuncia algo que no se puede abrir).
+- Si ocultas absolutamente todo, la página avisa de que no hay nada visible.
+- El botón "Descargar todos (PDF)" también respeta lo oculto.
+
 ## Notas técnicas
 
 - El visor lee el encoding declarado en cada XML (Peñalara usa ISO-8859-1),

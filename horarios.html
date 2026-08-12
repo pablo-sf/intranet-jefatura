@@ -368,11 +368,36 @@ async function datosDePropuesta(iter, archivo){
 }
 
 /* ---------- Arranque ---------- */
+
+// Aplica las marcas de ocultación del manifest. Los archivos siguen en el
+// repositorio: simplemente no se muestran. Admite ocultar una iteración
+// entera ("oculta": true) o propuestas sueltas ("ocultas": [...]).
+function filtrarOcultos(man){
+  const visibles = (man.iteraciones || [])
+    .filter(it => it.oculta !== true)
+    .map(it => {
+      const ocultas = new Set(it.ocultas || []);
+      const propuestas = (it.propuestas || []).filter(p => !ocultas.has(p));
+      const copia = { ...it, propuestas };
+      // Si la propuesta marcada como definitiva se ha ocultado, retiramos la
+      // marca: no tiene sentido anunciar un horario que no se puede abrir.
+      if (copia.aprobada && !propuestas.includes(copia.aprobada)) delete copia.aprobada;
+      return copia;
+    })
+    // Una iteración sin propuestas visibles no se muestra
+    .filter(it => it.propuestas.length > 0);
+
+  man.iteraciones = visibles;
+  return man;
+}
+
 async function iniciar(){
   try {
     const resp = await fetch(RUTA_DATOS + "manifest.json", {cache:"no-store"});
     if (!resp.ok) throw new Error("No se pudo cargar manifest.json");
-    manifest = await resp.json();
+    manifest = filtrarOcultos(await resp.json());
+    if (!manifest.iteraciones.length)
+      throw new Error("No hay ninguna propuesta visible en manifest.json");
     // Iteraciones ordenadas de más antigua a más reciente
     const norm = f => String(f).replace(/-/g,"");
     manifest.iteraciones.sort((a,b) => norm(a.fecha).localeCompare(norm(b.fecha)));
