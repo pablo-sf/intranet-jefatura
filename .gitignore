@@ -1,0 +1,8 @@
+# Archivos que macOS crea solo en cada carpeta
+.DS_Store
+
+# Copias comprimidas del proyecto: no deben viajar dentro del propio proyecto
+*.zip
+
+# Carpeta de trabajo de la CLI de Vercel, si alguna vez se usa
+.vercel/
