@@ -9,12 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css?v=4">
-<link rel="stylesheet" href="assets/css/avisos.css?v=3">
+<link rel="stylesheet" href="assets/css/avisos.css?v=4">
+<script src="assets/js/nav.js?v=1" defer></script>
+<script src="assets/js/avisos.js?v=1" defer></script>
 </head>
 <body>
 
 <header class="portada">
   <div class="envoltorio">
+    <barra-nav pagina="Hoja de Avisos">
+      <a href="index.html" class="btnVolver">← Volver a la intranet</a>
+    </barra-nav>
     <p class="eyebrow aparece">CDP Torrealba · Curso 26/27</p>
     <h1 class="aparece">La Hoja de Avisos<br>ya <em>se escribe sola</em>.<br>Casi.</h1>
     <p class="entradilla">Desde septiembre el boletín del viernes no se redacta: se revisa. Lo monta un programa a partir de lo que se va dejando durante la semana en el calendario, en la hoja de avisos y en el plan de formación. Este documento explica qué hay que hacer para que salga bien, quién se ocupa de cada cosa y cómo se administra el sistema por dentro.</p>
@@ -457,58 +462,6 @@
   </div>
 </footer>
 
-<script>
-/* -----------------------------------------------------------------
-   Calculadora del viernes.
-   Regla del sistema: se coge el LUNES de la semana en la que cae el
-   evento y se le restan 3 días. Ese es el viernes del boletín en el
-   que aparece el aviso.
-   ----------------------------------------------------------------- */
-(function(){
-  var campo  = document.getElementById('fechaEvento');
-  var salida = document.getElementById('resultado');
-  if(!campo || !salida) return;
-
-  var DIAS  = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
-  var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio',
-               'agosto','septiembre','octubre','noviembre','diciembre'];
-
-  // "martes 20 de octubre de 2026"
-  function enLetra(f){
-    return DIAS[f.getDay()] + ' ' + f.getDate() + ' de ' +
-           MESES[f.getMonth()] + ' de ' + f.getFullYear();
-  }
-
-  function viernesDelBoletin(f){
-    var d = f.getDay();                       // 0 domingo … 6 sábado
-    var haciaElLunes = (d === 0) ? -6 : 1 - d;
-    var lunes = new Date(f);
-    lunes.setDate(f.getDate() + haciaElLunes);
-    var viernes = new Date(lunes);
-    viernes.setDate(lunes.getDate() - 3);     // la regla del sistema
-    return viernes;
-  }
-
-  function calcular(){
-    if(!campo.value){
-      salida.className = 'vacio';
-      salida.textContent = 'Elige una fecha para ver en qué boletín sale.';
-      return;
-    }
-    // Se fija el mediodía para que ningún cambio de hora mueva el día.
-    var evento  = new Date(campo.value + 'T12:00:00');
-    var viernes = viernesDelBoletin(evento);
-    salida.className = '';
-    salida.innerHTML =
-      '<span class="flecha">' + enLetra(evento) + ' →</span>' +
-      'Sale en el boletín del <b>' + enLetra(viernes) + '</b>';
-  }
-
-  campo.addEventListener('change', calcular);
-  campo.addEventListener('input', calcular);
-  calcular();
-})();
-</script>
 
 </body>
 </html>

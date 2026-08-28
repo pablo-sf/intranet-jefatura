@@ -21,6 +21,13 @@ body{
 }
 .envoltorio{max-width:960px;margin:0 auto;padding:0 24px}
 
+/* La barra de navegación va sobre la portada oscura: las migas necesitan
+   colores claros, el botón blanco de base.css ya contrasta bien. */
+.portada .navSuperior{margin:0 0 34px}
+.portada .migas{color:var(--sobre-oscuro-tenue)}
+.portada .migas a{color:var(--lima)}
+.portada .migas .actual{color:var(--sobre-oscuro)}
+
 /* ---------- Portada ---------- */
 .portada{
   background:var(--oscuro);
