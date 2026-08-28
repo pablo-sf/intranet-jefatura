@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Intranet Jefatura · CDP Torrealba
+   base.css
+
+   El ÚNICO sitio donde se definen los colores y las tipografías de la casa.
+   Si algún día cambia la identidad del centro, se cambia aquí y cambia en
+   todas las páginas a la vez. Lo específico de cada página vive en su
+   propia hoja (portada.css, horarios.css, avisos.css).
+   ========================================================================== */
+
+:root{
+  /* ---- Identidad del centro ---------------------------------------- */
+  --teal:#006778;          /* color corporativo principal */
+  --teal-osc:#00505d;
+  --lima:#A6D608;          /* color corporativo secundario */
+  --lima-osc:#7ba300;
+
+  /* ---- Superficies y texto ----------------------------------------- */
+  --tinta:#1c2422;         /* color del texto */
+  --blanco:#ffffff;
+  --fondo:#fafbfa;         /* páginas de herramienta: portada, horarios */
+  --fondo-doc:#f1f4f2;     /* páginas tipo documento, con fichas blancas */
+  --linea:#e2e6e4;
+  --gris:#68716e;
+
+  /* ---- Sobre fondo oscuro ------------------------------------------
+     Bloques de color corporativo con texto claro encima. */
+  --oscuro:#00505d;
+  --oscuro-2:#0b5d6b;             /* bloques dentro de una zona oscura */
+  --oscuro-3:#0e6b7a;             /* el bloque que destaca entre ellos */
+  --sobre-oscuro:#eaf2f3;         /* texto principal encima */
+  --sobre-oscuro-suave:#c2d8dc;   /* texto secundario */
+  --sobre-oscuro-tenue:#8fb2b8;   /* rótulos y notas al pie */
+
+  /* ---- Colores con significado -------------------------------------
+     Estos NO son decoración: reproducen los colores con los que la Hoja
+     de Avisos y el calendario marcan cada estado. Cambiarlos por gusto
+     rompería la correspondencia con lo que el equipo ve en la hoja. */
+  --aviso-programado:#B7E1CD;      /* el verde de los avisos ya programados */
+  --aviso-programado-osc:#3F7F63;  /* su texto legible */
+  --ok:#3F7F63;                    /* ejemplo correcto */
+  --pendiente:#F0B429;             /* el ámbar de las salidas por aprobar */
+  --pendiente-suave:#FFF4E5;
+  --pendiente-texto:#9A6A00;
+  --urgente:#D93025;               /* el Tomate del calendario */
+
+  /* ---- Tipografías -------------------------------------------------- */
+  --display:'Bricolage Grotesque','Trebuchet MS',sans-serif;
+  --texto:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono','SFMono-Regular',Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--tinta);
+  font-family:var(--texto);
+  line-height:1.45;
+}
+
+/* ==========================================================================
+   Barra de navegación de las páginas interiores
+   Botón de vuelta + migas de pan. La portada no la lleva: es el punto
+   de partida.
+   ========================================================================== */
+
+.navSuperior{
+  display:flex;align-items:center;flex-wrap:wrap;gap:.7rem 1rem;
+  margin:.2rem 0 .4rem;
+}
+.btnVolver{
+  display:inline-flex;align-items:center;gap:.4rem;
+  border:1px solid var(--linea);background:var(--blanco);color:var(--teal);
+  border-radius:8px;padding:.4rem .8rem;
+  font:inherit;font-size:.86rem;font-weight:500;
+  text-decoration:none;
+  transition:border-color .12s, background .12s;
+}
+.btnVolver:hover{border-color:var(--teal);background:#f0f7f6;color:var(--teal-osc)}
+.btnVolver:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+
+.migas{font-size:.82rem;color:var(--gris)}
+.migas a{color:var(--teal);text-decoration:none}
+.migas a:hover{text-decoration:underline}
+.migas .sep{margin:0 .35rem;opacity:.6}
+.migas .actual{color:var(--tinta);font-weight:500}
+
+@media print{
+  .navSuperior{display:none!important}
+}
