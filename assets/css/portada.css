@@ -55,18 +55,20 @@ body{line-height:1.5}
 
 /* --------------------------------------------------------------------------
    Secciones
-   Cada una tiene su color de borde, del teal corporativo a la lima pasando
-   por los verdes intermedios. El orden sigue al de la portada, así que si
+   Cada una tiene su color de borde, de la lima al teal corporativo pasando
+   por los verdes intermedios. La gama va en ese sentido a propósito: arriba
+   la lima corta contra la cabecera teal, y abajo el teal cierra la página,
+   que no tiene footer de color. El orden sigue al de la portada, así que si
    cambias secciones de sitio conviene revisar que la gama siga progresando.
    -------------------------------------------------------------------------- */
 
 .seccion{margin-bottom:2rem; --borde-seccion:var(--teal)}
 
-.seccion.s-torrealba {--borde-seccion:var(--teal-osc)}
-.seccion.s-csa       {--borde-seccion:var(--teal-clr)}
+.seccion.s-torrealba {--borde-seccion:var(--lima)}
+.seccion.s-csa       {--borde-seccion:var(--lima-osc)}
 .seccion.s-aplicacion{--borde-seccion:var(--verde-medio)}
-.seccion.s-horarios  {--borde-seccion:var(--lima-osc)}
-.seccion.s-guias     {--borde-seccion:var(--lima)}
+.seccion.s-horarios  {--borde-seccion:var(--teal-clr)}
+.seccion.s-guias     {--borde-seccion:var(--teal-osc)}
 .seccion h2{
   font-family:var(--display);
   font-weight:600;

@@ -162,7 +162,8 @@ Cada página tiene además su propia hoja para lo suyo: `portada.css`,
 `horarios.css` y `avisos.css`.
 
 En la portada, cada sección tiene su propio color de borde (`portada.css`),
-en una progresión que va del teal corporativo a la lima. Si añades o mueves
+en una progresión que va de la lima al teal corporativo: arriba la lima
+contrasta con la cabecera teal, y abajo el teal cierra la página. Si añades o mueves
 secciones, dale a la nueva su clase `s-loquesea` y comprueba que la gama
 sigue teniendo sentido de arriba abajo.
 
