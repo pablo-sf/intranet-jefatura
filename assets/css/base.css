@@ -14,6 +14,8 @@
   --teal-osc:#00505d;
   --lima:#A6D608;          /* color corporativo secundario */
   --lima-osc:#7ba300;
+  --teal-clr:#007e91;      /* pasos intermedios entre el teal y la lima, */
+  --verde-medio:#428b5d;   /* para distinguir secciones sin salirse de la gama */
 
   /* ---- Superficies y texto ----------------------------------------- */
   --tinta:#1c2422;         /* color del texto */
