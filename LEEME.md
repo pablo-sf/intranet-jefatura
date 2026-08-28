@@ -161,12 +161,18 @@ corresponderse con lo que el equipo ve en la hoja.
 Cada página tiene además su propia hoja para lo suyo: `portada.css`,
 `horarios.css` y `avisos.css`.
 
+En la portada, cada sección tiene su propio color de borde (`portada.css`),
+en una progresión que va de la lima al teal corporativo: arriba la lima
+contrasta con la cabecera teal, y abajo el teal cierra la página. Si añades o mueves
+secciones, dale a la nueva su clase `s-loquesea` y comprueba que la gama
+sigue teniendo sentido de arriba abajo.
+
 ## Después de tocar un CSS o un JS, sube el número de versión
 
 Los enlaces llevan un número al final:
 
 ```html
-<link rel="stylesheet" href="assets/css/base.css?v=4">
+<link rel="stylesheet" href="assets/css/base.css?v=5">
 ```
 
 Ese `?v=4` existe para que nadie se quede con una versión antigua guardada en

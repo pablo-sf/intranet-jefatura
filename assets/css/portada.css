@@ -53,8 +53,22 @@ body{line-height:1.5}
 }
 .hero p{margin:.6rem 0 0; opacity:.85; font-size:.95rem}
 
-/* Secciones */
-.seccion{margin-bottom:2rem}
+/* --------------------------------------------------------------------------
+   Secciones
+   Cada una tiene su color de borde, de la lima al teal corporativo pasando
+   por los verdes intermedios. La gama va en ese sentido a propósito: arriba
+   la lima corta contra la cabecera teal, y abajo el teal cierra la página,
+   que no tiene footer de color. El orden sigue al de la portada, así que si
+   cambias secciones de sitio conviene revisar que la gama siga progresando.
+   -------------------------------------------------------------------------- */
+
+.seccion{margin-bottom:2rem; --borde-seccion:var(--teal)}
+
+.seccion.s-torrealba {--borde-seccion:var(--lima)}
+.seccion.s-csa       {--borde-seccion:var(--lima-osc)}
+.seccion.s-aplicacion{--borde-seccion:var(--verde-medio)}
+.seccion.s-horarios  {--borde-seccion:var(--teal-clr)}
+.seccion.s-guias     {--borde-seccion:var(--teal-osc)}
 .seccion h2{
   font-family:var(--display);
   font-weight:600;
@@ -70,7 +84,7 @@ body{line-height:1.5}
   display:block;
   background:#fff;
   border:1px solid var(--linea);
-  border-left:4px solid var(--teal);
+  border-left:4px solid var(--borde-seccion);
   border-radius:10px;
   padding:1rem 1.2rem;
   text-decoration:none;
@@ -80,12 +94,12 @@ body{line-height:1.5}
 }
 .tarjeta:hover{
   transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,80,93,.12);
-  border-left-color:var(--lima-osc);
+  box-shadow:0 6px 18px rgba(0,80,93,.16);
+  border-color:var(--linea);
+  border-left-color:var(--borde-seccion);
   color:var(--tinta);
 }
 .tarjeta .titulo{display:block; font-weight:600; font-size:1rem}
 .tarjeta .descripcion{display:block; color:var(--gris); font-size:.84rem; margin-top:.2rem}
 .tarjeta .externa{display:block; color:var(--gris); font-size:.75rem; margin-top:.45rem}
-.tarjeta.destacada{border-left-color:var(--lima)}
 footer{color:var(--gris); font-size:.8rem; padding:2rem 0 1.5rem; text-align:center}
