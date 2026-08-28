@@ -52,6 +52,11 @@
 
 *{box-sizing:border-box}
 
+/* Los navegadores dan un margen superior a los titulares; lo quitamos aquí
+   igual que hacía Bootstrap, para que cada página mande sobre sus márgenes. */
+h1,h2,h3,h4,p{margin-top:0}
+h1,h2,h3,h4{line-height:1.2}
+
 body{
   margin:0;
   background:var(--fondo);

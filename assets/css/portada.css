@@ -3,6 +3,33 @@
    Lo compartido (colores, tipografías) está en base.css
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   Contenedor y rejilla
+   Sustituyen a las clases de Bootstrap (container / row / col-md-6). Las
+   medidas son las que Bootstrap aplicaba: 1140 px de ancho máximo, 12 px de
+   margen interior y 16 px de separación entre tarjetas.
+   -------------------------------------------------------------------------- */
+
+body{line-height:1.5}
+
+.container{
+  width:100%;
+  max-width:1140px;
+  margin:0 auto;
+  padding:0 12px;
+}
+
+.rejilla{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+}
+.rejilla .ancha{grid-column:1/-1}   /* tarjeta que ocupa la fila entera */
+
+@media(max-width:767px){
+  .rejilla{grid-template-columns:1fr}
+}
+
 /* Cabecera con banda corporativa */
 .hero{
   background:linear-gradient(105deg, var(--teal) 0%, var(--teal-osc) 100%);
@@ -57,8 +84,8 @@
   border-left-color:var(--lima-osc);
   color:var(--tinta);
 }
-.tarjeta .titulo{font-weight:600; font-size:1rem}
-.tarjeta .descripcion{color:var(--gris); font-size:.84rem; margin-top:.2rem}
-.tarjeta .externa{color:var(--gris); font-size:.75rem; margin-top:.45rem}
+.tarjeta .titulo{display:block; font-weight:600; font-size:1rem}
+.tarjeta .descripcion{display:block; color:var(--gris); font-size:.84rem; margin-top:.2rem}
+.tarjeta .externa{display:block; color:var(--gris); font-size:.75rem; margin-top:.45rem}
 .tarjeta.destacada{border-left-color:var(--lima)}
-footer{color:var(--gris); font-size:.8rem; padding:2rem 0 1.5rem}
+footer{color:var(--gris); font-size:.8rem; padding:2rem 0 1.5rem; text-align:center}

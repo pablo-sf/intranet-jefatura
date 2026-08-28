@@ -23,7 +23,7 @@ h1.titulo::after{content:"";display:block;width:64px;height:4px;
   font-size:.78rem;border-radius:999px;padding:.25rem .8rem;letter-spacing:.03em}
 #bannerDefinitivo h2{font-family:var(--display);
   font-size:1.15rem;margin:0;font-weight:600}
-#bannerDefinitivo small{opacity:.85}
+#bannerDefinitivo small{opacity:.85;font-size:.875em}
 
 /* Iteraciones y propuestas */
 .selectorIteracion{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.4rem 0 .8rem}
