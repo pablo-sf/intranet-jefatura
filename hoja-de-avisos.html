@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Hoja de Avisos · Manual de uso y administración · CDP Torrealba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css?v=4">
+<link rel="stylesheet" href="assets/css/avisos.css?v=4">
+<script src="assets/js/nav.js?v=1" defer></script>
+<script src="assets/js/avisos.js?v=1" defer></script>
+</head>
+<body>
+
+<header class="portada">
+  <div class="envoltorio">
+    <barra-nav pagina="Hoja de Avisos">
+      <a href="index.html" class="btnVolver">← Volver a la intranet</a>
+    </barra-nav>
+    <p class="eyebrow aparece">CDP Torrealba · Curso 26/27</p>
+    <h1 class="aparece">La Hoja de Avisos<br>ya <em>se escribe sola</em>.<br>Casi.</h1>
+    <p class="entradilla">Desde septiembre el boletín del viernes no se redacta: se revisa. Lo monta un programa a partir de lo que se va dejando durante la semana en el calendario, en la hoja de avisos y en el plan de formación. Este documento explica qué hay que hacer para que salga bien, quién se ocupa de cada cosa y cómo se administra el sistema por dentro.</p>
+    <div class="destinatarios">
+      <span>Junta de Gobierno</span><span>Manual interno</span><span>Primer boletín: viernes 11/09/2026</span>
+    </div>
+
+    <!-- La cinta de la semana: es el resumen entero del sistema -->
+    <div class="cinta">
+      <div class="dia">
+        <div class="nombre">Lunes → Miércoles</div>
+        <p>Cada cosa a su sitio: los eventos al calendario, los avisos a la hoja, la formación a su pestaña. Sin prisa.</p>
+      </div>
+      <div class="dia">
+        <div class="nombre">Y lo que salga</div>
+        <p>El claustro pide sus salidas por el formulario. Eso llega solo, y la Junta las aprueba en la hoja.</p>
+      </div>
+      <div class="dia">
+        <div class="nombre">Jueves</div>
+        <p>Sigue entrando material. La sábana del horario se deja en la carpeta de la semana.</p>
+      </div>
+      <div class="dia jueves">
+        <div class="nombre">Jueves noche</div>
+        <p><strong>Cierre.</strong> Lo que no esté escrito a esta hora no sale en el boletín de mañana.</p>
+      </div>
+      <div class="dia viernes">
+        <div class="nombre">Viernes</div>
+        <div class="hito"><span class="hora">8:00</span><p>El borrador aparece hecho y llega un correo con el enlace.</p></div>
+        <div class="hito"><span class="hora">14:00</span><p>Se revisa en la reunión de la Junta y se publica al claustro.</p></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="envoltorio">
+
+  <section>
+    <span class="etiqueta">Lo primero</span>
+    <h2>Qué cambia y qué no</h2>
+    <p>No cambia el boletín: sale igual que siempre, con las mismas ocho secciones y el mismo aspecto. Lo que cambia es de dónde sale cada trozo. Ya no hay un documento en blanco que alguien rellena el jueves por la noche; hay cinco fuentes que se mantienen sin prisa durante la semana y un programa que las junta.</p>
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Sección del boletín</th><th>De dónde sale</th><th>Quién la mantiene</th></tr></thead>
+        <tbody>
+          <tr><td>📆 Calendario</td><td>Calendario «Torrealba»</td><td>La Junta de Gobierno</td></tr>
+          <tr><td>💬 Frase</td><td>Pestaña <code>Frases</code></td><td>Cargado el curso entero. No hay que tocar nada</td></tr>
+          <tr><td>⚠️ Avisos<br>👨‍👩‍👦 Promoción<br>🏡 Residencia<br>❌ Comportamiento</td><td>Pestaña <code>Avisos</code></td><td>La Junta de Gobierno</td></tr>
+          <tr><td>🚌 Visitas y salidas</td><td>Formulario de salidas</td><td>Lo pide el claustro · lo aprueba la Junta</td></tr>
+          <tr><td>📿 Medios de formación</td><td>Pestaña <code>Formación</code></td><td>Administración, carga anual</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Todo vive en la hoja de cálculo <a href="https://docs.google.com/spreadsheets/d/1rcCiNS_l4FWgdgCaZ6ZkQ-ujgyr3h09xivRlcoOeYNA/edit"><strong>«BD Boletín»</strong></a>, compartida con los tres miembros de la Junta. Una sola pestaña para cada cosa y ninguna necesidad de abrir el documento del boletín hasta el viernes.</p>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Reparto</span>
+    <h2>Quién hace qué</h2>
+    <p>La Junta de Gobierno la forman el director y los dos jefes de estudio. No hay reparto interno: todo se trabaja a tres y se pone en común el viernes. El único papel aparte es el técnico —cargar, configurar y mantener el sistema—, que no es una parcela de decisión sino de mantenimiento.</p>
+    <div class="reparto tres">
+      <div class="ficha">
+        <span class="etiqueta">Junta de Gobierno</span>
+        <h3>El director y los dos jefes de estudio</h3>
+        <ul>
+          <li>Añadir al calendario los eventos según se confirmen: evaluaciones, exámenes, entregas, actos.</li>
+          <li>Escribir avisos en la pestaña <code>Avisos</code> según vayan surgiendo, incluso con semanas de antelación.</li>
+          <li>Aprobar o denegar las salidas que pide el claustro, marcándolo en la hoja.</li>
+          <li>Revisar juntos el borrador el viernes a las 14:00 y publicarlo.</li>
+        </ul>
+      </div>
+      <div class="ficha">
+        <span class="etiqueta claustro">El claustro</span>
+        <h3>Sus salidas</h3>
+        <ul>
+          <li>Pedir por formulario cada salida, visita o tertulia que organice.</li>
+          <li>Recibir el boletín en PDF el viernes por la tarde.</li>
+        </ul>
+      </div>
+      <div class="ficha">
+        <span class="etiqueta admin">Administración del sistema</span>
+        <h3>Lo que se carga una vez</h3>
+        <ul>
+          <li>Las frases de la semana y el plan de formación, para todo el curso.</li>
+          <li>Los días no lectivos, la configuración y el disparador semanal.</li>
+          <li>Mantener el sistema y arreglar lo que se tuerza.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="nota">
+      <div class="titulo">La regla de oro</div>
+      <p>Las cosas se escriben <strong>cuando uno se entera</strong>, no cuando toca publicarlas. El sistema está hecho para eso: sabe guardarse un aviso seis semanas y sacarlo el viernes que corresponde. Lo que no perdona es lo que se queda en la cabeza hasta el jueves.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Junta de Gobierno</span>
+    <h2>El calendario de eventos</h2>
+    <p>Es el <a href="https://calendar.google.com/calendar/u/0?cid=Y183NTYyZDI5NDg4MDJkOGYxZDJiZmUwODNmZDljNjhlOTQxM2ZiZGI1OWIxYTQyMDhmYTRjMjMzMWNmNWE3MzZkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">calendario «Torrealba»</a>, que rellenan y editan los tres. Lo que se escriba ahí sale <strong>literalmente</strong> en la tabla del boletín, así que el título del evento no es una nota interna: es el texto publicado.</p>
+
+    <div class="contraste">
+      <div class="caso si">
+        <div class="marca">Así sí</div>
+        <span class="ejemplo">Título: Evaluación ordinaria de 2º Bachillerato<br>Hora: 11:00</span>
+        <p>Se publica como <em>Martes 15 (11:00) · Evaluación ordinaria de 2º Bachillerato</em>.</p>
+      </div>
+      <div class="caso no">
+        <div class="marca">Así no</div>
+        <span class="ejemplo">Título: eval 2BC 11h (¿confirmar con Juanmi?)</span>
+        <p>Sale tal cual en el boletín que lee todo el claustro, paréntesis incluido.</p>
+      </div>
+    </div>
+
+    <ul>
+      <li><strong>La hora va en el campo de hora</strong>, no en el título. El programa la coloca sola. Los eventos de día completo salen sin hora, que es lo correcto.</li>
+      <li><strong>Lo que sea de varios días se crea una sola vez</strong>, con su fecha de inicio y de fin. No hace falta un evento por día.</li>
+      <li><strong>Color Tomate = negrita.</strong> Es la única forma de destacar algo en la tabla. Conviene reservarlo para lo importante de verdad; si va todo en negrita, no destaca nada.</li>
+      <li><strong>Lo que no esté confirmado, no se mete.</strong> Borrar del calendario es fácil; desmentir un boletín ya enviado, no.</li>
+    </ul>
+
+    <div class="nota">
+      <div class="titulo">La descripción del evento sí se lee</div>
+      <p>No sale en el boletín —ahí solo aparece el título—, pero <strong>cualquier profesor que abra el calendario en Google Calendar la ve</strong>. Es el sitio para los detalles que no caben en el título y que a alguien le pueden hacer falta: dónde se queda, qué hay que llevar, quién coordina, el enlace a la circular. Lo que no debe ir ahí son las notas internas ni las dudas sin resolver.</p>
+    </div>
+
+    <div class="nota">
+      <div class="titulo">Cuánto se ve por delante</div>
+      <p>El boletín enseña <strong>las cuatro semanas siguientes</strong>, empezando por el lunes que viene. Lo que pase el mismo viernes ya no sale: cuando el claustro lee el correo, ha pasado. Conviene tener siempre ocho semanas cargadas para que nunca haya un hueco.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Junta de Gobierno</span>
+    <h2>Los avisos</h2>
+    <p>En la pestaña <code>Avisos</code>, una fila por aviso. Los escriben los tres, en todas las etapas. Se rellena de izquierda a derecha y no hay que tocar el documento del boletín para nada.</p>
+
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Columna</th><th>Qué se pone</th></tr></thead>
+        <tbody>
+          <tr><td>Fecha alta</td><td>El día en que se escribe. Es solo para saber de cuándo viene. <span class="no-publica">No se publica</span></td></tr>
+          <tr><td>Autor</td><td>Quién lo escribe. <span class="no-publica">No se publica</span></td></tr>
+          <tr><td>Texto</td><td>El aviso ya redactado, tal como lo va a leer el claustro.</td></tr>
+          <tr><td>Sección</td><td>Avisos, Promoción, Residencia o Comportamiento. Desplegable.</td></tr>
+          <tr><td>Recurrente</td><td><code>SÍ</code> para lo que se repite todas las semanas (normativa de móviles, actas…). <code>NO</code> para lo de esta semana.</td></tr>
+          <tr><td>Activo</td><td><code>SÍ</code> mientras deba publicarse. Se apaga solo al publicar.</td></tr>
+          <tr><td>Semanas restantes</td><td>Opcional. Con un <code>3</code>, sale tres viernes seguidos y se apaga.</td></tr>
+          <tr><td>Fecha del evento</td><td>Opcional, y es la interesante. Ver más abajo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Dos atajos al escribir el texto</h3>
+    <ul>
+      <li><strong><code>Alt + Intro</code> dentro de la celda</strong> hace un salto de línea, y cada línea sale como una subviñeta debajo de la principal. Sin guiones ni topos: los pone el boletín.</li>
+      <li><strong><code>[texto](enlace)</code></strong> se convierte en hipervínculo. Por ejemplo: <code>Rellenad el [acta de la sesión](https://…) antes del viernes</code>.</li>
+    </ul>
+
+    <h3>Avisos con fecha: escribir hoy lo del mes que viene</h3>
+    <p>Si se rellena <strong>Fecha del evento</strong>, el aviso se queda guardado y aparece solo en el boletín que toca. La fila se pone <strong>verde</strong> en la hoja mientras espera, para que se vea de un vistazo que está en la recámara y no se ha perdido.</p>
+    <div class="nota ojo">
+      <div class="titulo">Ojo con lo que significa esa fecha</div>
+      <p>Es <strong>la fecha del asunto</strong>: el día del examen, de la reunión, de la entrega. <strong>No</strong> el viernes en que se quiere que se publique. De calcular el viernes se encarga el programa, y siempre lo publica el viernes anterior a la semana del evento.</p>
+    </div>
+
+    <div class="calculadora">
+      <h3>La calculadora del viernes</h3>
+      <p>Por si conviene comprobarlo antes de escribirlo. Se pone la fecha del evento y dice en qué boletín va a salir.</p>
+      <div class="calc-fila">
+        <label for="fechaEvento">Fecha del evento</label>
+        <input type="date" id="fechaEvento" value="2026-10-20">
+      </div>
+      <div id="resultado" class="vacio">Elige una fecha para ver en qué boletín sale.</div>
+    </div>
+    <p>Y una tranquilidad: si a un aviso le tocaba un viernes que resulta ser festivo o no lectivo, <strong>no se pierde</strong>: sale en el primer boletín siguiente. Llega tarde, pero llega. Además, el correo del viernes por la mañana enseña siempre la lista de lo que hay en recámara para las próximas ocho semanas, con la fecha en que saldrá cada cosa. Si alguien escribió mal una fecha, se ve ahí y no en diciembre.</p>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta admin">Administración</span>
+    <h2>El plan de formación</h2>
+    <p>Pestaña <code>Formación</code>, una fila por cada actividad de cada grupo. El grupo se elige de un desplegable, así que no hay manera de escribirlo mal.</p>
+    <p>Esta pestaña <strong>no se mantiene semana a semana</strong>: se carga de una vez para todo el curso, igual que las frases, a partir del planning anual de formación. Quien la carga es la administración del sistema; el resto del equipo solo la consulta.</p>
+
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Columna</th><th>Qué se pone</th></tr></thead>
+        <tbody>
+          <tr><td>Semana (viernes)</td><td>El viernes del boletín en el que sale la actividad. <strong>Leer el aviso de abajo.</strong></td></tr>
+          <tr><td>Grupo</td><td>Del desplegable: 1º ESO, 2BC, 1PA… o «Todos» si es para todo el centro.</td></tr>
+          <tr><td>Actividad</td><td>El texto que se publica. <code>Alt + Intro</code> hace un salto de línea dentro de la celda.</td></tr>
+          <tr><td>Responsable</td><td>Control interno. <span class="no-publica">No se publica</span></td></tr>
+          <tr><td>Material/enlace</td><td>La URL del material. Sale como enlace sobre el texto de la actividad.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nota ojo">
+      <div class="titulo">El único punto donde es fácil equivocarse</div>
+      <p>La fecha de la primera columna es <strong>el viernes del boletín</strong>, no el lunes en que se trabaja la actividad. El boletín siempre anuncia la semana siguiente. Si la actividad es de la semana del <strong>19 al 23 de octubre</strong>, la fecha que va en la celda es <strong>16/10/2026</strong>. Es la misma regla que la calculadora de arriba, y también sirve aquí.</p>
+    </div>
+
+    <p>El orden en que salen las etapas y los grupos no depende de cómo se escriban las filas: lo decide la pestaña <code>Grupos</code>. Se puede escribir en cualquier orden.</p>
+
+    <div class="nota">
+      <div class="titulo">El recuadro rojo de las semanas sin formación</div>
+      <p>Si una semana no tiene ninguna actividad cargada, el boletín saca un <strong>recuadro rojo bien visible</strong> en el sitio de la tabla y lo avisa en el correo de la mañana. Es a propósito: el plan es anual, así que una semana en blanco casi siempre es un olvido, y es mejor verlo a las 8:00 que a las 14:05.</p>
+      <p><strong>Durante los primeros meses ese recuadro va a salir a menudo, y es lo esperado.</strong> La carga del plan es progresiva —son muchas filas para una sentada—, así que el recuadro funciona mientras tanto como marcador de por dónde va la carga, no como señal de que algo falle. Si de verdad una semana no hay formación, se quita a mano en la revisión del viernes.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta claustro">Lo pide el claustro · lo aprueba la Junta</span>
+    <h2>Las salidas y visitas</h2>
+    <p>Las salidas ya no se piden por correo ni de palabra: hay un <a href="https://forms.gle/9sxHonTrz2UvtqeTA">formulario de solicitud</a>. Pero pedirla no es publicarla. Entre lo uno y lo otro está la decisión de la Junta, que hasta ahora se tomaba de palabra y ahora queda escrita en la hoja.</p>
+
+    <div class="flujo">
+      <div class="paso">
+        <span class="orden">Paso 1</span>
+        <h4>Lo pide quien la organiza</h4>
+        <p>Rellena el formulario: lugar, cursos, profesores acompañantes, fechas, horario, autobús y observaciones. La solicitud cae sola en la pestaña <code>Visitas</code>.</p>
+      </div>
+      <div class="paso">
+        <span class="orden">Paso 2</span>
+        <h4>La decide la Junta</h4>
+        <p>En la columna <code>Aprobada</code> de esa misma fila. Mientras esté vacía, la salida está pendiente y <strong>no se publica</strong>.</p>
+      </div>
+      <div class="paso">
+        <span class="orden">Paso 3</span>
+        <h4>Sale en el boletín</h4>
+        <p>Solo las aprobadas aparecen en la tabla, en el boletín de la semana que les corresponda. El resto no llega nunca al claustro.</p>
+      </div>
+    </div>
+
+    <h3>Los tres estados de una solicitud</h3>
+    <div class="tabla-envoltorio">
+      <table class="ancha">
+        <thead><tr><th>Celda <code>Aprobada</code></th><th>Qué significa</th><th>Qué hace el sistema</th></tr></thead>
+        <tbody>
+          <tr><td><span class="muestra ambar"></span>Vacía</td><td>Pendiente de decidir. Es el estado en que llega todo lo que entra por el formulario.</td><td>No la publica, y <strong>la recuerda cada viernes</strong> mientras se acerque su fecha.</td></tr>
+          <tr><td><span class="muestra verdecito"></span><code>SÍ</code></td><td>Aprobada.</td><td>La publica en el boletín que le toque.</td></tr>
+          <tr><td><span class="muestra gris"></span><code>NO</code></td><td>No se publica: denegada, o sustituida por una solicitud posterior.</td><td>No la publica y <strong>no vuelve a mencionarla</strong>. Se queda en la hoja como registro.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nota pendiente">
+      <div class="titulo">Por qué el «NO» explícito importa</div>
+      <p>Si «denegada» y «pendiente» fueran la misma celda vacía, una salida rechazada en septiembre seguiría reclamando atención cada viernes hasta que pasara su fecha. Con el <code>NO</code> escrito, la denegada se calla y solo insisten las que de verdad esperan respuesta.</p>
+      <p>Lo que el sistema <strong>no</strong> hace es comunicar la decisión al solicitante: eso se habla, aunque el formulario recoja su correo.</p>
+    </div>
+
+    <h3>Las que quedan pendientes se recuerdan solas</h3>
+    <p>Toda solicitud sin decidir cuya fecha caiga dentro de las <strong>tres semanas siguientes</strong> aparece en un recuadro ámbar en el correo del viernes por la mañana, con el lugar, el curso, la fecha y el correo de quien la pidió. Es la lista de lo que hay que despachar en la reunión de las 14:00, con la hoja delante.</p>
+
+    <h3>El resto de detalles del formulario</h3>
+    <ul>
+      <li><strong>Las salidas de varios días</strong> se piden una sola vez, con fecha de inicio y de fin.</li>
+      <li><strong>Las observaciones y el autobús no se publican</strong>: son campos internos.</li>
+      <li><strong>Una respuesta enviada ya no se puede editar.</strong> Para corregir algo hay que enviar una solicitud nueva y marcar la anterior como <code>NO</code>. Es a propósito: así queda registro de lo que se pidió y no salió, y no puede ocurrir que cambie la fecha de una salida ya aprobada sin que nadie vuelva a mirarla.</li>
+      <li>Una semana sin salidas es normal: la tabla desaparece del boletín y no pasa nada.</li>
+    </ul>
+
+    <div class="nota">
+      <div class="titulo">El seguimiento de cada salida</div>
+      <p>A la derecha de <code>Aprobada</code>, la pestaña <code>Visitas</code> lleva un <strong>checklist de doce columnas</strong> para la gestión posterior: autorizaciones de las familias, acompañantes confirmados, presupuestos del autobús y de las actividades, botiquín, teléfono del conductor, medicación y alergias, guardias anotadas y avisadas. Una columna de <strong>Preparación</strong> lleva la cuenta (<code>7/9</code>) de lo que va cumplido.</p>
+      <p>Nada de esto se publica: vive en la hoja, atado a la solicitud, y lo ve la Junta entera. Las dos columnas del autobús se agrisan solas cuando la solicitud dice que no hace falta.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Cada semana</span>
+    <h2>Los adjuntos: la sábana del horario</h2>
+    <p>El correo que recibe el claustro lleva el boletín en PDF y, detrás, <strong>todo lo que haya en la carpeta de esa semana</strong>. Ahí es donde viaja la sábana del horario, que antes se pegaba a mano.</p>
+
+    <div class="admin-marco">
+      <h3>La rutina, en dos pasos</h3>
+      <ul>
+        <li>El sistema deja creada, al publicar cada boletín, la <strong>subcarpeta del viernes siguiente</strong> dentro de «Adjuntos del boletín», con el nombre en formato <code>AAAAMMDD</code>.</li>
+        <li>Durante la semana se copia ahí la sábana —<code>Sábana horario semana 3</code>, <code>Sábana horario semana 4</code>…— <strong>con el nombre que debe leer el claustro</strong>. Al publicar, se adjunta sola.</li>
+      </ul>
+      <p>Es la única acción manual que se repite cada semana.</p>
+    </div>
+
+    <div class="nota">
+      <div class="titulo">Tres cosas que conviene saber</div>
+      <p><strong>El nombre del fichero es el rótulo.</strong> El correo enumera los adjuntos por su nombre, sin la extensión. Un fichero llamado <code>Sábana horario semana 3.pdf</code> se anuncia exactamente así. De ahí que merezca la pena comprobar el nombre al copiarlo.</p>
+      <p><strong>No hace falta que sea PDF.</strong> Un documento de Google dejado en la carpeta se convierte a PDF al vuelo. Vale cualquier fichero: una circular, unas instrucciones, lo que haga falta esa semana.</p>
+      <p><strong>Si la carpeta está vacía, el boletín sale igual.</strong> El cuadro de confirmación de «Publicar» dice en mayúsculas qué se va a adjuntar y qué no, y decide quien publica.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">El viernes</span>
+    <h2>Revisar y publicar</h2>
+
+    <h3>A las 8:00, el correo</h3>
+    <p>Llega solo a los tres miembros de la Junta, con el enlace al borrador ya montado. Además del enlace trae tres bloques que conviene mirar antes de la reunión, en este orden:</p>
+    <ul>
+      <li><strong>Las incidencias</strong>: lo que el programa no ha encontrado. Una salida sin hora de regreso, un grupo que no reconoce, una semana sin formación. Nunca falla en silencio y nunca se planta: si algo falta, hace el boletín igual y lo cuenta.</li>
+      <li><strong>Los avisos programados</strong> que están esperando su turno, con la fecha en que saldrá cada uno.</li>
+      <li><strong>Las salidas pendientes de aprobar</strong> cuya fecha se acerca. Es el orden lógico: lo que hay que arreglar, lo que hay en recámara, lo que hay que decidir.</li>
+    </ul>
+
+    <h3>A las 14:00, la revisión</h3>
+    <p>Los tres revisan juntos el borrador, que es un Google Doc normal. Se retoca a mano lo que haga falta —redacción, un evento que se ha caído, una coletilla— y lo que se corrija ahí es lo que se publica. Los cambios de fondo, mejor hacerlos en la hoja: así el sistema aprende y la semana siguiente ya sale bien. Y con la hoja delante se despachan las salidas pendientes.</p>
+
+    <h3>Y después, publicar</h3>
+    <p>En el menú <strong>Boletín → Publicar boletín…</strong> de la hoja. Sale un cuadro que enumera exactamente lo que va a pasar: qué documento se manda, a quién, desde qué cuenta, qué adjuntos lleva y con qué tamaño, y cuántos avisos se van a apagar. Hasta que no se acepta, no se envía nada.</p>
+    <div class="nota ojo">
+      <div class="titulo">Publicar se hace desde la cuenta de la Junta</div>
+      <p>El correo al claustro sale <strong>siempre</strong> de la sesión de <code>juntadegobierno@torrealba.es</code>. Si se publica desde una cuenta personal, el correo le llega al claustro a nombre de esa persona. Es lo único del sistema que hay que recordar activamente.</p>
+    </div>
+    <p>Al publicar pasan cuatro cosas de golpe: el claustro recibe el boletín en PDF con los adjuntos de la semana, la intranet actualiza su enlace al último boletín, los avisos de esta semana se apagan solos y queda creada la carpeta de adjuntos del viernes siguiente. Los avisos recurrentes se quedan, y los que tienen fecha para más adelante no se tocan.</p>
+    <p><strong>Nada sale hacia el claustro de forma automática, nunca.</strong> El programa escribe; enviar se decide en la reunión.</p>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta admin">Administración</span>
+    <h2>La zona de administración</h2>
+    <p>Esta parte no hace falta para el uso diario: está aquí para que el sistema no dependa de una sola cabeza. Explica quién ejecuta qué, dónde se configura cada cosa y qué hace cada entrada del menú oculto.</p>
+
+    <h3>Las dos cuentas</h3>
+    <p>El sistema usa dos cuentas con papeles distintos, y la diferencia no es cosmética: <strong>Apps Script envía siempre los correos desde la cuenta que ejecuta el script</strong>, y eso no se puede configurar.</p>
+    <div class="tabla-envoltorio">
+      <table class="ancha">
+        <thead><tr><th></th><th><code>juntadegobierno@torrealba.es</code></th><th>La cuenta administradora</th></tr></thead>
+        <tbody>
+          <tr><td>Propiedad</td><td>Hoja maestra, plantilla, carpeta «Sistema Boletin»</td><td>Carpeta «Hojas de Avisos» y los boletines</td></tr>
+          <tr><td>Disparador semanal</td><td><strong>Lo instala y lo ejecuta</strong></td><td>No</td></tr>
+          <tr><td>Publicar boletín</td><td><strong>Siempre desde aquí</strong></td><td>No: saldría a nombre de una persona</td></tr>
+          <tr><td>Menú «Instalación»</td><td>No lo ve</td><td><strong>Lo ve</strong></td></tr>
+          <tr><td>Avisos de fallo</td><td>—</td><td>Los recibe</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Un disparador de Apps Script <strong>pertenece a la cuenta que lo crea</strong> y se ejecuta como ella, y desde una cuenta no se ven los disparadores de otra. Por eso el disparador semanal se instala una sola vez, desde <code>juntadegobierno</code>: si dos cuentas lo instalaran, saldrían dos boletines y dos correos cada viernes. El sistema deja constancia de quién lo instaló y avisa si no coincide.</p>
+
+    <h3>El menú «Instalación»</h3>
+    <p>Cuelga del menú <strong>Boletín</strong> de la hoja y <strong>solo lo ve la cuenta administradora</strong>, la que figura en <code>Config → CORREO_ADMIN</code>. No es una medida de seguridad —son funciones de mantenimiento, no secretos—, sino de higiene: rehacer estructuras o tocar disparadores no debería estar a un clic de nadie que abra la hoja a diario. Desde <code>juntadegobierno</code> no aparece, así que estas funciones se lanzan desde el editor de Apps Script.</p>
+
+    <div class="tabla-envoltorio">
+      <table class="ancha">
+        <thead><tr><th>Entrada</th><th>Qué hace</th></tr></thead>
+        <tbody>
+          <tr><td>Crear estructura de la BD</td><td>Rehace las pestañas, cabeceras, desplegables y claves de <code>Config</code> que falten. Es la función de arranque; se usa al montar el sistema o al preparar el curso siguiente.</td></tr>
+          <tr><td>Revisar formulario de visitas</td><td>Comprueba que el formulario de salidas tiene todas sus preguntas y sigue vinculado a la pestaña <code>Visitas</code>.</td></tr>
+          <tr><td>Revisar plantilla</td><td>Verifica que la plantilla del boletín conserva todos sus marcadores y sus tablas modelo. Es lo primero que hay que mirar si el boletín sale con huecos.</td></tr>
+          <tr><td>Revisar viernes sin boletín</td><td>Enseña cómo ha entendido el sistema la lista de días no lectivos y qué va a pasar en los doce viernes siguientes. Se lanza después de cargar el calendario oficial.</td></tr>
+          <tr><td>Revisar avisos programados</td><td>Lista los avisos con fecha que están en recámara y en qué viernes va a salir cada uno.</td></tr>
+          <tr><td>Revisar carpetas de adjuntos</td><td>Crea lo que falte, da la URL de la carpeta madre y lista qué hay en los cuatro próximos viernes.</td></tr>
+          <tr><td>Estado del disparador semanal</td><td>Dice si hay disparador, qué cuenta lo instaló y con qué día y hora. Apps Script no permite consultar eso directamente: el sistema lo anota al instalarlo.</td></tr>
+          <tr><td>Instalar disparador semanal</td><td>Crea el disparador con el día y la hora de <code>Config</code>. Es idempotente: borra los anteriores de esa función, así que no acumula copias.</td></tr>
+          <tr><td>Quitar disparador semanal</td><td>Lo elimina. Solo puede hacerlo la misma cuenta que lo instaló.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="nota">
+      <div class="titulo">Las funciones «Revisar…» no rompen nada</div>
+      <p>Diagnostican y, como mucho, crean lo que falta. Se pueden lanzar en cualquier momento y son el primer paso ante cualquier duda. «Crear estructura de la BD» es la única que reescribe, y respeta lo que ya haya cargado.</p>
+    </div>
+
+    <h3>La pestaña <code>Config</code></h3>
+    <p>Es la única fuente de verdad de todo lo configurable. Nada de lo que hay aquí está escrito en el código, así que cambiar un destinatario o un horizonte no exige tocar nada más. Las claves que más se mueven:</p>
+    <div class="tabla-envoltorio">
+      <table class="ancha">
+        <thead><tr><th>Clave</th><th>Para qué sirve</th></tr></thead>
+        <tbody>
+          <tr><td>MODO_PRUEBAS</td><td>Con <code>SÍ</code>, los dos correos van solo a la cuenta administradora y el asunto lleva el prefijo <code>[PRUEBAS]</code>. Además, publicar no escribe en la hoja. Se pone a <code>NO</code> el día del estreno.</td></tr>
+          <tr><td>HORIZONTE_SEMANAS</td><td>Cuántas semanas de calendario y de salidas enseña el boletín. Hoy, 4.</td></tr>
+          <tr><td>SEMANAS_PROGRAMADOS</td><td>Cuántas semanas de avisos en recámara se listan en el correo del viernes. Hoy, 8.</td></tr>
+          <tr><td>SEMANAS_VISITAS_PENDIENTES</td><td>A cuántas semanas vista empieza a reclamar una salida sin aprobar. Hoy, 3.</td></tr>
+          <tr><td>VIERNES_SIN_BOLETIN</td><td>Los viernes en que no se genera boletín. Ver abajo.</td></tr>
+          <tr><td>DIA_GENERACION<br>HORA_GENERACION</td><td>Cuándo se lanza el disparador. Cambiarlos no mueve el disparador: hay que volver a instalarlo.</td></tr>
+          <tr><td>CORREOS_NOTIFICACION<br>CORREO_CLAUSTRO<br>CORREO_ADMIN</td><td>Quién recibe el aviso del borrador, quién recibe el boletín y quién administra el sistema.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Los viernes sin boletín</h3>
+    <p>En <code>Config → VIERNES_SIN_BOLETIN</code>, una fecha o un rango por línea (<code>Alt + Intro</code> dentro de la celda), con el motivo entre paréntesis si se quiere:</p>
+    <div class="admin-marco">
+      <p style="font-family:var(--mono);font-size:14.5px;line-height:1.9;margin:16px 0">
+        21/12/2026 - 08/01/2027 (Navidad)<br>
+        22/03/2027 a 28/03/2027 (Semana Santa)<br>
+        26/02/2027 (día del centro)
+      </p>
+      <p>El separador del rango es un guion o una «a», <strong>siempre rodeados de espacios</strong>. Así se pueden escribir las fechas con guiones sin ambigüedad.</p>
+    </div>
+    <p>Solo lo mira la generación automática de las 8:00, que en esos viernes no hace nada y no avisa a nadie. La generación manual pregunta y deja seguir. Y ante una línea ilegible, <strong>genera igualmente</strong>: un boletín de más no lo publica nadie, porque publicar es manual; un boletín de menos en semana lectiva no se nota hasta el lunes.</p>
+
+    <h3>Si algo falla el viernes por la mañana</h3>
+    <ul>
+      <li><strong>No llega el correo de las 8:00.</strong> Se genera a mano desde <strong>Boletín → Generar boletín…</strong>. Da tiempo de sobra antes de las 14:00.</li>
+      <li><strong>El boletín sale con huecos o con tablas de ejemplo a la vista.</strong> Es deliberado: significa que una fuente no se ha podido leer, y el correo dice cuál. Una tabla vacía sí se borra; una tabla ilegible se deja fea a propósito para que se vea en la revisión.</li>
+      <li><strong>La tabla de formación sale con recuadro rojo.</strong> Esa semana no hay nada cargado. Durante la carga progresiva del curso, es lo normal.</li>
+      <li><strong>Falta la sábana en el correo.</strong> El fichero no estaba en la subcarpeta del viernes, o la subcarpeta no existía. Se comprueba con «Revisar carpetas de adjuntos».</li>
+    </ul>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Estado real</span>
+    <h2>Lo que todavía no está</h2>
+    <p>El sistema hace ya todo lo que hasta ahora se hacía a mano. Estas son las costuras que quedan a la vista:</p>
+    <ul>
+      <li><strong>Los días no lectivos están por cargar.</strong> Hace falta el calendario oficial del curso para rellenar <code>VIERNES_SIN_BOLETIN</code>. Hasta entonces el sistema generaría boletín también esos viernes; no es grave, porque publicar es manual.</li>
+      <li><strong>El plan de formación se carga por tandas.</strong> Mientras dure la carga, las semanas aún sin cubrir sacarán el recuadro rojo. Es el marcador de por dónde va, no un fallo.</li>
+      <li><strong>Mientras <code>MODO_PRUEBAS</code> esté en <code>SÍ</code></strong>, los correos van solo a la cuenta administradora. El aviso de las 8:00 no llegará al resto del equipo hasta el día del estreno.</li>
+      <li><strong>Las dos primeras semanas de septiembre el boletín se generará en paralelo</strong> al de siempre, para comparar y ajustar sin riesgo. A partir de la tercera, el borrador automático pasa a ser el documento real.</li>
+      <li><strong>Escribir los avisos desde la intranet, y dictarlos por voz, es un proyecto para más adelante</strong>, no algo inminente: primero tiene que rodar el boletín. De momento los avisos se escriben en la hoja, que funciona igual de bien aunque sea menos cómodo.</li>
+      <li><strong>El checklist de las salidas vive por ahora solo en la hoja.</strong> No avisa de nada ni entra en el correo del viernes; es una lista de control compartida. Engancharlo al flujo queda para más adelante.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="cierre">
+  <div class="envoltorio">
+    <h2>Si algo no cuadra</h2>
+    <p>Basta con decirlo. No hace falta arreglar nada en el documento ni averiguar qué ha pasado: casi todo se corrige en la hoja en dos minutos, y lo que no, se mira en la reunión del viernes.</p>
+    <p>Lo que sí conviene: cuando una semana algo salga raro o incómodo, apuntarlo y comentarlo. Las mejores mejoras del sistema han salido justo de ahí.</p>
+    <p class="pie">Hoja de Avisos · CDP Torrealba · Manual de uso y administración · Agosto de 2026</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

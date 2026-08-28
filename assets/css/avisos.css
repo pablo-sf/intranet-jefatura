@@ -1,0 +1,284 @@
+/* ==========================================================================
+   Hoja de Avisos · manual de uso y administración
+   Lo compartido (colores, tipografías, barra de navegación) está en base.css
+
+   Nota sobre los colores: el ámbar, el tomate y el verde de esta página no
+   son decoración. Reproducen los colores con los que la hoja de cálculo y
+   el calendario marcan cada estado, y por eso viven en base.css como
+   colores con significado (--pendiente, --urgente, --aviso-programado).
+   ========================================================================== */
+/* Los estilos de impresión están al final del archivo. */
+
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--fondo-doc);
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.envoltorio{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* La barra de navegación va sobre la portada oscura: las migas necesitan
+   colores claros, el botón blanco de base.css ya contrasta bien. */
+.portada .navSuperior{margin:0 0 34px}
+.portada .migas{color:var(--sobre-oscuro-tenue)}
+.portada .migas a{color:var(--lima)}
+.portada .migas .actual{color:var(--sobre-oscuro)}
+
+/* ---------- Portada ---------- */
+.portada{
+  background:var(--oscuro);
+  color:var(--sobre-oscuro);
+  padding:56px 0 0;
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--lima);
+  margin:0 0 18px;
+}
+.portada h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(38px,7vw,72px);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  margin:0 0 18px;
+}
+.portada h1 em{font-style:normal;color:var(--lima)}
+.entradilla{
+  max-width:60ch;
+  font-size:19px;
+  color:var(--sobre-oscuro-suave);
+  margin:0 0 40px;
+}
+.destinatarios{
+  display:flex;flex-wrap:wrap;gap:10px;margin:0 0 44px;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+}
+.destinatarios span{
+  border:1px solid rgba(166,214,8,.35);
+  border-radius:999px;padding:6px 14px;color:var(--lima);
+}
+
+/* ---------- La cinta de la semana ---------- */
+.cinta{
+  display:grid;
+  grid-template-columns:repeat(4,1fr) 1.9fr;
+  gap:2px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.12);
+  border-bottom:none;
+  border-radius:10px 10px 0 0;
+  overflow:hidden;
+  transform:translateY(1px);
+}
+.dia{
+  background:var(--oscuro-2);
+  padding:18px 14px 22px;
+  min-height:150px;
+}
+.dia .nombre{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sobre-oscuro-tenue);margin-bottom:10px;
+}
+.dia p{margin:0;font-size:14.5px;color:var(--sobre-oscuro-suave);line-height:1.45}
+.dia.jueves{background:var(--oscuro-3)}
+.dia.jueves .nombre{color:var(--lima)}
+.dia.jueves p strong{color:#fff}
+.dia.viernes{background:var(--aviso-programado);color:var(--tinta)}
+.dia.viernes .nombre{color:var(--aviso-programado-osc)}
+.dia.viernes p{color:var(--tinta)}
+.hito{display:flex;gap:10px;align-items:flex-start;margin-top:12px}
+.hora{
+  font-family:var(--mono);font-weight:700;font-size:13px;
+  background:var(--oscuro);color:var(--lima);
+  padding:2px 7px;border-radius:4px;white-space:nowrap;flex:none;
+}
+.hito p{font-size:14.5px}
+@media(max-width:720px){
+  .cinta{grid-template-columns:1fr 1fr;border-radius:10px;transform:none;margin-bottom:24px}
+  .dia{min-height:0}
+  .dia.viernes{grid-column:1/-1}
+}
+
+/* ---------- Cuerpo ---------- */
+main{padding:64px 0 0}
+section{margin:0 0 64px}
+.etiqueta{
+  display:inline-block;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 10px;border-radius:4px;margin-bottom:14px;
+  background:var(--oscuro);color:var(--lima);
+}
+.etiqueta.admin{background:#3F5E8C;color:#DDE8F7}
+.etiqueta.claustro{background:#8A6A2E;color:#F7ECD6}
+h2{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(27px,4.2vw,40px);line-height:1.1;letter-spacing:-.015em;
+  margin:0 0 14px;
+}
+h3{
+  font-family:var(--display);font-weight:700;font-size:20px;
+  margin:34px 0 10px;letter-spacing:-.01em;line-height:1.6;
+}
+p{margin:0 0 16px;max-width:72ch}
+a{color:var(--teal)}
+strong{font-weight:700}
+code{
+  font-family:var(--mono);font-size:.88em;
+  background:#e7ebe7;padding:2px 6px;border-radius:4px;
+  border:1px solid var(--linea);
+}
+ul{margin:0 0 16px;padding-left:22px;max-width:72ch}
+li{margin-bottom:8px}
+li::marker{color:var(--teal)}
+hr.separador{border:none;border-top:1px solid var(--linea);margin:0 0 56px}
+
+/* ---------- Fichas: reparto de tareas y flujos ---------- */
+.reparto{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:0 0 20px}
+.reparto.tres{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.reparto.tres{grid-template-columns:1fr}}
+@media(max-width:720px){.reparto{grid-template-columns:1fr}}
+.ficha{
+  background:var(--blanco);border:1px solid var(--linea);
+  border-radius:10px;padding:24px 24px 8px;
+}
+.ficha h3{margin-top:0}
+.ficha ul{padding-left:20px}
+
+/* Flujo de tres pasos: solicitar → decidir → publicar */
+.flujo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 24px}
+@media(max-width:720px){.flujo{grid-template-columns:1fr}}
+.paso{
+  background:var(--blanco);border:1px solid var(--linea);
+  border-radius:10px;padding:20px 22px;position:relative;
+}
+.paso .orden{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:8px;display:block;
+}
+.paso h4{font-family:var(--display);font-size:17.5px;margin:0 0 8px;letter-spacing:-.01em;line-height:1.6}
+.paso p{font-size:15px;color:var(--gris);margin:0;max-width:none}
+
+/* ---------- Tarjetas de aviso ---------- */
+.nota{
+  border-left:4px solid var(--teal);
+  background:var(--blanco);
+  padding:18px 22px;border-radius:0 8px 8px 0;
+  margin:0 0 20px;
+}
+.nota.ojo{border-left-color:var(--urgente)}
+.nota.pendiente{border-left-color:var(--pendiente);background:var(--pendiente-suave)}
+.nota .titulo{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:8px;
+}
+.nota.ojo .titulo{color:var(--urgente)}
+.nota.pendiente .titulo{color:var(--pendiente-texto)}
+.nota p:last-child{margin-bottom:0}
+
+/* ---------- Bien / mal ---------- */
+.contraste{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 22px}
+@media(max-width:620px){.contraste{grid-template-columns:1fr}}
+.caso{background:var(--blanco);border:1px solid var(--linea);border-radius:8px;padding:16px 18px}
+.caso .marca{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.caso.si .marca{color:var(--ok)}
+.caso.no .marca{color:var(--urgente)}
+.caso .ejemplo{font-family:var(--mono);font-size:14px;line-height:1.5;display:block;margin-bottom:8px}
+.caso p{font-size:15px;margin:0;color:var(--gris)}
+
+/* ---------- Tablas ---------- */
+.tabla-envoltorio{overflow-x:auto;margin:0 0 22px;border:1px solid var(--linea);border-radius:8px;background:var(--blanco)}
+table{border-collapse:collapse;width:100%;font-size:15.5px;min-width:520px}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gris);font-weight:400;background:#f0f3f1;
+}
+tr:last-child td{border-bottom:none}
+td:first-child{font-family:var(--mono);font-size:14px;white-space:nowrap}
+td .no-publica{color:var(--urgente);font-family:var(--texto);font-size:13.5px;display:block}
+/* Tablas de dos columnas anchas (menú de administración, estados) */
+table.ancha td:first-child{white-space:normal}
+
+/* Muestras de color de las filas de la hoja */
+.muestra{
+  display:inline-block;width:14px;height:14px;border-radius:3px;
+  border:1px solid rgba(0,0,0,.15);vertical-align:-2px;margin-right:8px;
+}
+.muestra.ambar{background:#FFF2CC}
+.muestra.verdecito{background:#D9EAD3}
+.muestra.gris{background:#EDEDED}
+
+/* ---------- La calculadora del viernes ---------- */
+.calculadora{
+  background:var(--oscuro);color:var(--sobre-oscuro);
+  border-radius:12px;padding:32px;margin:0 0 24px;
+}
+.calculadora h3{color:var(--lima);margin:0 0 6px}
+.calculadora p{color:var(--sobre-oscuro-suave);font-size:15.5px;max-width:56ch}
+.calc-fila{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:22px 0 0}
+.calculadora label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sobre-oscuro-tenue)}
+.calculadora input[type=date]{
+  font-family:var(--mono);font-size:16px;padding:10px 14px;
+  border:1px solid rgba(166,214,8,.4);background:var(--oscuro-2);color:var(--sobre-oscuro);
+  border-radius:6px;
+}
+.calculadora input[type=date]:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+#resultado{
+  margin-top:22px;padding:20px 22px;border-radius:8px;
+  background:var(--aviso-programado);color:var(--tinta);
+  font-size:18px;line-height:1.45;
+}
+#resultado .flecha{font-family:var(--mono);color:var(--aviso-programado-osc);display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+#resultado b{font-family:var(--display);font-weight:800;font-size:21px}
+#resultado.vacio{background:var(--oscuro-2);color:var(--sobre-oscuro-tenue);font-size:15.5px}
+
+/* ---------- Bloque de administración ---------- */
+.admin-marco{
+  background:var(--oscuro-2);color:var(--sobre-oscuro);
+  border-radius:12px;padding:8px 32px 20px;margin:0 0 24px;
+}
+.admin-marco h3{color:var(--lima)}
+.admin-marco p{color:var(--sobre-oscuro-suave)}
+.admin-marco code{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.18);color:var(--lima)}
+.admin-marco ul{color:var(--sobre-oscuro-suave)}
+.admin-marco li::marker{color:var(--lima)}
+
+/* ---------- Cierre ---------- */
+.cierre{background:var(--oscuro);color:var(--sobre-oscuro);padding:56px 0;margin-top:24px}
+.cierre h2{color:var(--lima)}
+.cierre p{color:var(--sobre-oscuro-suave)}
+.cierre .pie{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sobre-oscuro-tenue);margin-top:36px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px;
+}
+
+/* ---------- Entrada suave, respetando las preferencias ---------- */
+.aparece{opacity:0;transform:translateY(10px);animation:sube .6s ease forwards}
+.aparece:nth-child(2){animation-delay:.08s}
+@keyframes sube{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .aparece{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Impresión ---------- */
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  .portada,.cierre,.calculadora,.admin-marco{background:#fff;color:#000;border:1px solid #999}
+  .portada h1 em,.eyebrow,.cierre h2,.calculadora h3,.admin-marco h3{color:#000}
+  .entradilla,.cierre p,.calculadora p,.admin-marco p,.admin-marco ul{color:#333}
+  .admin-marco code{background:#eee;color:#000;border-color:#999}
+  .dia,.dia.viernes,.dia.jueves{background:#fff;border:1px solid #999;color:#000}
+  .dia p,.dia .nombre{color:#000}
+  .hora{background:#000;color:#fff}
+  section{break-inside:avoid}
+  .aparece{opacity:1;transform:none;animation:none}
+}
