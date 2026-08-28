@@ -137,6 +137,56 @@ Detalles a tener en cuenta:
 
 ---
 
+## Destacar una sección según la época del curso
+
+La portada puede subir una sección al primer puesto y pintarla de naranja,
+para señalar de qué toca ocuparse en ese momento del año. Se enciende y se
+apaga a mano, porque el curso no empieza siempre en la misma fecha.
+
+Se hace escribiendo **una palabra** en `index.html`. Busca esta línea (está
+justo debajo de un comentario que recuerda las opciones):
+
+```html
+<div class="container">
+```
+
+Y añade detrás de `container` la palabra que toque:
+
+| Cuándo | Qué escribir | Qué pasa |
+|---|---|---|
+| Mayo-junio | `<div class="container temporada-distribucion">` | Sube **Aplicación**, con la etiqueta "Reparto del próximo curso" |
+| Verano | `<div class="container temporada-horarios">` | Sube **Horarios**, con la etiqueta "Propuestas en revisión" |
+| Durante el curso | `<div class="container">` | Todo vuelve a su orden normal |
+
+Guarda, haz commit y sube. No hay que tocar nada más: las otras secciones se
+recolocan solas debajo y mantienen sus colores.
+
+**Qué cambia en la sección destacada:** sube al primer puesto, el borde de sus
+tarjetas y el título pasan al naranja, y aparece su etiqueta. Todo lo demás
+sigue igual.
+
+**Si quieres cambiar el texto de una etiqueta**, está escrito en el propio
+`index.html`, dentro del título de cada sección:
+
+```html
+<h2>Aplicación <span class="etiqueta">Reparto del próximo curso</span></h2>
+```
+
+La etiqueta está siempre ahí, pero solo se ve cuando esa sección es la
+destacada. Puedes cambiar el texto sin miedo.
+
+**Si algún día quieres destacar otra sección** (por ejemplo "Documentos CSA"
+durante la matriculación), hacen falta dos retoques:
+
+1. En `index.html`, añade a su título el `<span class="etiqueta">…</span>`.
+2. En `assets/css/portada.css`, al final del archivo, añade la sección a las
+   dos listas del bloque "Temporada" (una línea en cada una) siguiendo el
+   mismo patrón que las que ya están.
+
+Y acuérdate de subir el número de versión de `portada.css` (ver más abajo).
+
+---
+
 # Tocar el código
 
 ## Los colores y las tipografías están en un solo sitio
@@ -161,6 +211,10 @@ corresponderse con lo que el equipo ve en la hoja.
 Cada página tiene además su propia hoja para lo suyo: `portada.css`,
 `horarios.css` y `avisos.css`.
 
+Y hay un naranja aparte, `--destacado`, reservado para la sección destacada
+de temporada (ver arriba). Queda fuera de la gama del centro a propósito: si
+se usara para más cosas, dejaría de destacar.
+
 En la portada, cada sección tiene su propio color de borde (`portada.css`),
 en una progresión que va de la lima al teal corporativo: arriba la lima
 contrasta con la cabecera teal, y abajo el teal cierra la página. Si añades o mueves
@@ -172,10 +226,10 @@ sigue teniendo sentido de arriba abajo.
 Los enlaces llevan un número al final:
 
 ```html
-<link rel="stylesheet" href="assets/css/base.css?v=5">
+<link rel="stylesheet" href="assets/css/base.css?v=6">
 ```
 
-Ese `?v=4` existe para que nadie se quede con una versión antigua guardada en
+Ese `?v=6` existe para que nadie se quede con una versión antigua guardada en
 la caché de su navegador. **Cuando cambies un archivo, sube su número en todas
 las páginas que lo enlacen.** Si no, alguien puede seguir viendo lo de antes
 durante días.

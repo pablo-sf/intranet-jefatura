@@ -17,6 +17,15 @@
   --teal-clr:#007e91;      /* pasos intermedios entre el teal y la lima, */
   --verde-medio:#428b5d;   /* para distinguir secciones sin salirse de la gama */
 
+  /* ---- Destacado de temporada --------------------------------------
+     El naranja queda fuera de la gama del centro a propósito: se usa
+     solo para señalar la sección de la que hay que ocuparse ahora
+     (ver "temporada" en portada.css). Si se usara para más cosas
+     dejaría de destacar. */
+  --destacado:#D97757;       /* el borde y el subrayado */
+  --destacado-osc:#A64B2A;   /* su texto, legible sobre fondo claro */
+  --destacado-suave:#FDF1EC; /* fondo de la etiqueta */
+
   /* ---- Superficies y texto ----------------------------------------- */
   --tinta:#1c2422;         /* color del texto */
   --blanco:#ffffff;

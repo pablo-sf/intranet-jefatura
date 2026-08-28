@@ -75,8 +75,23 @@ body{line-height:1.5}
   font-size:.95rem;
   letter-spacing:.06em;
   text-transform:uppercase;
-  color:var(--teal);
+  color:var(--color-titulo, var(--teal));
   margin-bottom:.9rem;
+}
+
+.seccion .etiqueta{
+  display:var(--etiqueta, none);   /* solo aparece en la sección destacada */
+  vertical-align:middle;
+  margin-left:.6rem;
+  padding:.16rem .6rem .2rem;
+  border-radius:999px;
+  background:var(--destacado-suave);
+  color:var(--destacado-osc);
+  font-family:var(--texto);
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:0;
+  text-transform:none;
 }
 
 /* Tarjetas de enlace */
@@ -94,7 +109,7 @@ body{line-height:1.5}
 }
 .tarjeta:hover{
   transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,80,93,.16);
+  box-shadow:0 6px 18px var(--sombra-seccion, rgba(0,80,93,.16));
   border-color:var(--linea);
   border-left-color:var(--borde-seccion);
   color:var(--tinta);
@@ -103,3 +118,36 @@ body{line-height:1.5}
 .tarjeta .descripcion{display:block; color:var(--gris); font-size:.84rem; margin-top:.2rem}
 .tarjeta .externa{display:block; color:var(--gris); font-size:.75rem; margin-top:.45rem}
 footer{color:var(--gris); font-size:.8rem; padding:2rem 0 1.5rem; text-align:center}
+
+/* --------------------------------------------------------------------------
+   Temporada: destacar una sección durante unas semanas
+   --------------------------------------------------------------------------
+   Se enciende a mano desde index.html, escribiendo una de estas palabras
+   en el <div class="container"> que envuelve las secciones:
+
+       temporada-distribucion   sube "Aplicación"  (mayo-junio)
+       temporada-horarios       sube "Horarios"    (verano)
+       (sin palabra)            todo en su sitio   (durante el curso)
+
+   Para añadir una temporada nueva basta con sumar una línea al selector
+   de abajo y otra a la lista de contenedores; el aspecto ya está resuelto.
+   Este bloque va al final del archivo a propósito: es la excepción, y así
+   sus colores ganan a los de la sección.
+   -------------------------------------------------------------------------- */
+
+/* El contenedor solo necesita poder reordenar cuando hay temporada activa */
+.container.temporada-distribucion,
+.container.temporada-horarios{
+  display:flex;
+  flex-direction:column;
+}
+
+/* La sección de turno sube al primer puesto y se viste de naranja */
+.temporada-distribucion .seccion.s-aplicacion,
+.temporada-horarios     .seccion.s-horarios{
+  order:-1;
+  --borde-seccion:var(--destacado);
+  --color-titulo:var(--destacado-osc);
+  --sombra-seccion:rgba(166,75,42,.22);
+  --etiqueta:inline-block;
+}

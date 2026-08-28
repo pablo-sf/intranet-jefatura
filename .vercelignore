@@ -1,0 +1,4 @@
+# Archivos que viven en el repositorio pero NO deben publicarse en la web.
+# El LEEME es documentación interna de mantenimiento: se lee aquí, en GitHub
+# o en tu editor, no desde la dirección de la intranet.
+LEEME.md
