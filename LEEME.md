@@ -221,6 +221,30 @@ contrasta con la cabecera teal, y abajo el teal cierra la página. Si añades o 
 secciones, dale a la nueva su clase `s-loquesea` y comprueba que la gama
 sigue teniendo sentido de arriba abajo.
 
+## El botón verde de la portada
+
+Arriba del todo, encima de las secciones, hay un botón lima que lleva a la
+página de altas y bajas de avisos. No es una tarjeta más a propósito: las
+tarjetas abren un documento, y ésta lleva a hacer una tarea. Como es lo que
+más se pulsa durante el curso, va antes que nada y con el color más llamativo
+de la casa.
+
+Vive en `index.html`, en su **propio** `<div class="container">`, separado del
+que envuelve las secciones. Está así para que el destacado de temporada nunca
+lo mueva de sitio: pase lo que pase, el botón es lo primero.
+
+**Ojo con la dirección.** Apunta a la aplicación de avisos, que se sirve desde
+Apps Script:
+
+```
+https://script.google.com/a/macros/torrealba.es/s/AKfycby…/exec
+```
+
+Esa dirección se mantiene mientras actualices el despliegue **editando la
+implementación que ya existe** (Implementar → Gestionar implementaciones →
+lápiz → Nueva versión). Si algún día creas una implementación nueva desde
+cero, Google te dará otra dirección y habrá que cambiarla aquí a mano.
+
 ## Después de tocar un CSS o un JS, sube el número de versión
 
 Los enlaces llevan un número al final:

@@ -42,6 +42,7 @@
   --sobre-oscuro:#eaf2f3;         /* texto principal encima */
   --sobre-oscuro-suave:#c2d8dc;   /* texto secundario */
   --sobre-oscuro-tenue:#8fb2b8;   /* rótulos y notas al pie */
+  --sobre-lima:#3d4a1f;           /* texto secundario sobre fondo lima */
 
   /* ---- Colores con significado -------------------------------------
      Estos NO son decoración: reproducen los colores con los que la Hoja

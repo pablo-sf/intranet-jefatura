@@ -54,6 +54,53 @@ body{line-height:1.5}
 .hero p{margin:.6rem 0 0; opacity:.85; font-size:.95rem}
 
 /* --------------------------------------------------------------------------
+   Acción principal
+   El enlace que más se pulsa del curso. Va antes que nada y no se parece a
+   las tarjetas: aquéllas abren un documento, ésta lleva a hacer una tarea.
+   Al pasar el ratón solo se levanta, no se oscurece: si el fondo se
+   oscureciera, la línea pequeña dejaría de leerse bien.
+   -------------------------------------------------------------------------- */
+
+.accion{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  background:var(--lima);
+  color:var(--tinta);
+  text-decoration:none;
+  border-radius:10px;
+  padding:1.1rem 1.4rem;
+  margin-bottom:2rem;
+  box-shadow:0 2px 10px rgba(123,163,0,.3);
+  transition:transform .12s, box-shadow .12s;
+}
+.accion:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(123,163,0,.42);
+  color:var(--tinta);
+}
+.accion .rotulo{
+  display:block;
+  font-family:var(--display);
+  font-weight:700;
+  font-size:1.15rem;
+  line-height:1.2;
+}
+.accion .detalle{
+  display:block;
+  color:var(--sobre-lima);
+  font-size:.82rem;
+  margin-top:.2rem;
+}
+.accion .flecha{font-size:1.35rem; line-height:1; flex-shrink:0}
+
+@media(max-width:767px){
+  .accion{padding:1rem 1.15rem}
+  .accion .rotulo{font-size:1.05rem}
+}
+
+/* --------------------------------------------------------------------------
    Secciones
    Cada una tiene su color de borde, de la lima al teal corporativo pasando
    por los verdes intermedios. La gama va en ese sentido a propósito: arriba
