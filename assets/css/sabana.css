@@ -1,0 +1,273 @@
+/* ==========================================================================
+   La sábana horaria · manual de uso
+   Lo compartido (colores, tipografías, barra de navegación) está en base.css
+
+   Esta hoja repite algunas reglas de avisos.css —la portada oscura, las
+   etiquetas, las notas, las tablas—, porque las dos páginas son documentos
+   y se leen igual. Se han copiado en vez de compartirse para no tocar una
+   página que ya funciona; el día que haya una tercera, conviene sacar lo
+   común a una hoja aparte y que las tres tiren de ella.
+
+   Los colores de la sábana (el rosa de la G1, el ámbar de la G2, los dos
+   recreos, el gris y el naranja) NO son decoración: son exactamente los
+   que el profesor ve en la hoja de cálculo. Viven aquí y no en base.css
+   porque solo los usa esta página, pero se les aplica la misma regla que
+   a los de la Hoja de Avisos: no se cambian por gusto.
+   ========================================================================== */
+/* Los estilos de impresión están al final del archivo. */
+
+:root{
+  --g1:#f4c7c3;          /* primera guardia */
+  --g2:#fce8b2;          /* segunda guardia */
+  --recreo-eso:#9fc5e8;
+  --recreo-bach:#b7e1cd;
+  --sin-tarea:#d9d9d9;
+  --grupo-fuera:#f9cb9c;
+  --cambio:#ffff00;
+  --cambio-tinta:#ff0000;
+  --celda-borde:#b9c1cb;
+}
+
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--fondo-doc);
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.envoltorio{max-width:960px;margin:0 auto;padding:0 24px}
+
+.portada .navSuperior{margin:0 0 34px}
+.portada .migas{color:var(--sobre-oscuro-tenue)}
+.portada .migas a{color:var(--lima)}
+.portada .migas .actual{color:var(--sobre-oscuro)}
+
+/* ---------- Portada ---------- */
+.portada{
+  background:var(--oscuro);
+  color:var(--sobre-oscuro);
+  padding:56px 0 0;
+}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--lima);margin:0 0 18px;
+}
+.portada h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(38px,7vw,72px);line-height:1.02;letter-spacing:-.02em;
+  margin:0 0 18px;
+}
+.portada h1 em{font-style:normal;color:var(--lima)}
+.entradilla{
+  max-width:60ch;font-size:19px;
+  color:var(--sobre-oscuro-suave);margin:0 0 40px;
+}
+.destinatarios{
+  display:flex;flex-wrap:wrap;gap:10px;margin:0 0 44px;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+}
+.destinatarios span{
+  border:1px solid rgba(166,214,8,.35);
+  border-radius:999px;padding:6px 14px;color:var(--lima);
+}
+
+/* ---------- La tira: una fila de sábana de verdad ----------
+   Hace de portada y de leyenda a la vez. Es lo primero que se ve, y es
+   exactamente lo que hay que aprender a leer. */
+.tira-marco{
+  border:1px solid rgba(255,255,255,.12);
+  border-bottom:none;border-radius:10px 10px 0 0;
+  background:var(--oscuro-2);
+  padding:22px 22px 24px;
+  transform:translateY(1px);
+}
+.tira-marco .pie-tira{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sobre-oscuro-tenue);
+  margin:0 0 14px;
+}
+.tira{display:flex;overflow-x:auto;border:1px solid var(--celda-borde);width:fit-content;max-width:100%}
+.tira .cel{
+  flex:0 0 auto;width:70px;height:52px;
+  display:grid;place-items:center;
+  border-right:1px solid var(--celda-borde);
+  font-family:var(--display);font-weight:700;font-size:19px;
+  color:var(--tinta);background:#fff;
+}
+.tira .cel:last-child{border-right:none}
+.tira .cel.quien{
+  width:112px;font-family:var(--mono);font-weight:400;
+  font-size:11.5px;line-height:1.35;text-align:center;
+}
+.tira .cel.chica{font-family:var(--mono);font-size:12px;font-weight:400}
+@media(max-width:720px){
+  .tira-marco{border-radius:10px;transform:none;margin-bottom:24px}
+}
+
+/* ---------- Cuerpo ---------- */
+main{padding:64px 0 0}
+section{margin:0 0 64px}
+.etiqueta{
+  display:inline-block;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 10px;border-radius:4px;margin-bottom:14px;
+  background:var(--oscuro);color:var(--lima);
+}
+h2{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(27px,4.2vw,40px);line-height:1.1;letter-spacing:-.015em;
+  margin:0 0 14px;
+}
+h3{
+  font-family:var(--display);font-weight:700;font-size:20px;
+  margin:34px 0 10px;letter-spacing:-.01em;line-height:1.6;
+}
+p{margin:0 0 16px;max-width:72ch}
+a{color:var(--teal)}
+strong{font-weight:700}
+code{
+  font-family:var(--mono);font-size:.88em;
+  background:#e7ebe7;padding:2px 6px;border-radius:4px;
+  border:1px solid var(--linea);
+}
+/* La ruta de un menú. Se distingue del nombre de una pestaña a propósito:
+   una es algo que se pulsa y la otra algo que se abre. */
+code.via{
+  background:#e4eeef;border-color:#c8dcde;color:var(--teal-osc);
+  font-weight:500;white-space:nowrap;
+}
+code.via i{font-style:normal;opacity:.55;padding:0 .15em}
+ul{margin:0 0 16px;padding-left:22px;max-width:72ch}
+li{margin-bottom:8px}
+li::marker{color:var(--teal)}
+hr.separador{border:none;border-top:1px solid var(--linea);margin:0 0 56px}
+
+/* ---------- La secuencia de pasos ----------
+   Vertical y no en columnas como el flujo de la Hoja de Avisos: aquí cada
+   paso lleva su "qué mirar", y en tres columnas no cabría. */
+.secuencia{list-style:none;margin:0 0 20px;padding:0;counter-reset:paso}
+/* El número va anclado al margen y el contenido corre en flujo normal, a
+   todo el ancho de la ficha. Se probó a montarlo como rejilla de dos
+   columnas y no: en una rejilla cada hijo cae en la casilla siguiente, así
+   que el texto se repartía a trozos entre la columna del número y la del
+   contenido, y salía en una tira estrechísima. Anclando el número no hay
+   casillas que repartir. */
+.secuencia > li{
+  counter-increment:paso;
+  position:relative;
+  background:var(--blanco);border:1px solid var(--linea);border-radius:10px;
+  padding:22px 24px 22px 60px;margin-bottom:14px;
+}
+.secuencia > li::before{
+  content:counter(paso,decimal-leading-zero);
+  position:absolute;left:24px;top:27px;
+  font-family:var(--mono);font-size:12.5px;font-weight:700;
+  color:var(--teal);letter-spacing:.04em;
+}
+.secuencia h4{
+  font-family:var(--display);font-size:18.5px;font-weight:700;
+  margin:0 0 8px;letter-spacing:-.01em;line-height:1.35;
+}
+.secuencia p{margin:0 0 12px;max-width:none}
+.secuencia ul{margin:0 0 12px;max-width:none}
+.secuencia > li > :last-child{margin-bottom:0}
+.mira{
+  border-top:1px solid var(--linea);
+  padding-top:12px;margin-top:14px;
+}
+.mira .titulo{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:6px;
+}
+.mira p{font-size:15.5px;color:var(--gris);margin:0;max-width:none}
+.mira p strong{color:var(--tinta)}
+@media(max-width:620px){
+  .secuencia > li{padding:20px 20px 20px 22px}
+  .secuencia > li::before{position:static;display:block;margin-bottom:8px}
+}
+
+/* ---------- Tarjetas de aviso ---------- */
+.nota{
+  border-left:4px solid var(--teal);
+  background:var(--blanco);
+  padding:18px 22px;border-radius:0 8px 8px 0;margin:0 0 20px;
+}
+.nota.ojo{border-left-color:var(--urgente)}
+.nota .titulo{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:8px;
+}
+.nota.ojo .titulo{color:var(--urgente)}
+.nota p:last-child{margin-bottom:0}
+
+/* ---------- El código de colores ---------- */
+.colores{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 22px}
+@media(max-width:720px){.colores{grid-template-columns:1fr}}
+.color{
+  background:var(--blanco);border:1px solid var(--linea);border-radius:10px;
+  display:grid;grid-template-columns:74px minmax(0,1fr);overflow:hidden;
+}
+.color .celda{
+  display:grid;place-items:center;
+  font-family:var(--display);font-weight:700;font-size:20px;color:#1c2422;
+  border-right:1px solid var(--linea);
+}
+.color .dice{padding:14px 16px}
+.color b{
+  display:block;font-family:var(--display);font-weight:700;font-size:16px;
+  line-height:1.3;margin-bottom:3px;
+}
+.color span{display:block;font-size:14.5px;line-height:1.45;color:var(--gris)}
+
+/* ---------- Tablas ---------- */
+.tabla-envoltorio{overflow-x:auto;margin:0 0 22px;border:1px solid var(--linea);border-radius:8px;background:var(--blanco)}
+table{border-collapse:collapse;width:100%;font-size:15.5px;min-width:520px}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--linea);vertical-align:top}
+th{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gris);font-weight:400;background:#f0f3f1;
+}
+tr:last-child td{border-bottom:none}
+td:first-child{white-space:nowrap}
+td.desc{color:var(--gris)}
+
+/* ---------- Cierre ---------- */
+.cierre{background:var(--oscuro);color:var(--sobre-oscuro);padding:56px 0;margin-top:24px}
+.cierre h2{color:var(--lima)}
+.cierre p{color:var(--sobre-oscuro-suave)}
+.cierre .pie{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sobre-oscuro-tenue);margin-top:36px;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:18px;
+}
+
+/* ---------- Entrada suave, respetando las preferencias ---------- */
+.aparece{opacity:0;transform:translateY(10px);animation:sube .6s ease forwards}
+.aparece:nth-child(2){animation-delay:.08s}
+@keyframes sube{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .aparece{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Impresión ----------
+   Este manual se imprime: se consulta al lado del ordenador mientras se
+   trabaja en la hoja. Los colores de la sábana se conservan a propósito. */
+@media print{
+  body{background:#fff;font-size:11.5pt}
+  .portada,.cierre{background:#fff;color:#000;border:1px solid #999}
+  .portada h1 em,.eyebrow,.cierre h2{color:#000}
+  .entradilla,.cierre p{color:#333}
+  .destinatarios span{color:#000;border-color:#999}
+  .tira-marco{background:#fff;border:1px solid #999;transform:none}
+  .tira-marco .pie-tira{color:#000}
+  .etiqueta{background:#fff;color:#000;border:1px solid #999}
+  section{break-inside:avoid}
+  .secuencia > li{break-inside:avoid}
+  .aparece{opacity:1;transform:none;animation:none}
+  .tira .cel,.color .celda{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}

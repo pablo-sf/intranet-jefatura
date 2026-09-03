@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sábana horaria · Manual de uso · CDP Torrealba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css?v=7">
+<link rel="stylesheet" href="assets/css/sabana.css?v=1">
+<script src="assets/js/nav.js?v=1" defer></script>
+</head>
+<body>
+
+<header class="portada">
+  <div class="envoltorio">
+    <barra-nav pagina="Sábana horaria">
+      <a href="index.html" class="btnVolver">← Volver a la intranet</a>
+    </barra-nav>
+    <p class="eyebrow aparece">CDP Torrealba · Curso 26/27</p>
+    <h1 class="aparece">Cada semana<br><em>se genera</em>.<br>Elegir sigue siendo tuyo.</h1>
+    <p class="entradilla">La sábana del curso ya no se copia de la semana anterior: se lanza desde el menú y sale con su calendario dentro. Este documento dice qué se lanza, en qué orden y qué hay que mirar después para saber que ha salido bien. Lo que no automatiza nada es la decisión de quién cubre un hueco.</p>
+    <div class="destinatarios">
+      <span>Jefatura de estudios</span><span>Manual interno</span><span>Hoja: Sábana 2026-27</span>
+    </div>
+
+    <!-- La tira: una fila de sábana de verdad. Hace de portada y de leyenda
+         a la vez, porque es justo lo que hay que aprender a leer. -->
+    <div class="tira-marco">
+      <p class="pie-tira">Una fila cualquiera, y lo que dice cada color</p>
+      <div class="tira" role="img" aria-label="Una fila de la sábana: el nombre del profesor, una hora en gris sin tarea, una primera guardia en rosa, una hora libre en blanco, una segunda guardia en ámbar, un recreo de ESO en azul, una clase de un grupo que está fuera en naranja y una ausencia marcada con una equis roja sobre amarillo.">
+        <div class="cel quien">Apellidos,<br>Nombre<br>(ABR)</div>
+        <div class="cel" style="background:var(--sin-tarea)"></div>
+        <div class="cel" style="background:var(--g1)">G1</div>
+        <div class="cel"></div>
+        <div class="cel" style="background:var(--g2)">G2</div>
+        <div class="cel" style="background:var(--recreo-eso)">RE</div>
+        <div class="cel chica" style="background:var(--grupo-fuera)">2ESO</div>
+        <div class="cel" style="background:var(--cambio);color:var(--cambio-tinta)">X</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="envoltorio">
+
+  <section>
+    <span class="etiqueta">Lo primero</span>
+    <h2>Los dos menús, y por qué son dos</h2>
+    <p>La línea que los separa es de quién es el trabajo de hoy.</p>
+    <p><strong>Sábana</strong> es lo del día y lo de la semana: generar, validar, marcar ausencias, buscar sustituto y escribirlo. Va todo suelto, sin submenús, porque se lanza varias veces cada mañana y no puede estar a dos clics. <strong>Aquí no hay nada que borre trabajo hecho.</strong></p>
+    <p><strong>Mantenimiento</strong> es lo de septiembre y lo de cuando algo se ha torcido: montar el curso, repartir guardias, regenerar la base y los diagnósticos. Está en submenús a propósito, porque son las entradas que reescriben pestañas enteras: el clic de más es parte del aviso.</p>
+    <div class="nota">
+      <div class="titulo">Si no ves el menú</div>
+      <p>Recarga la hoja. Los menús se montan al abrirla, así que después de un cambio en el programa hay que volver a cargarla una vez.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Rutina semanal</span>
+    <h2>El lunes: generar y validar</h2>
+    <p>Cada semana se genera desde cero, con su calendario dentro. No se duplica la base ni se copia la semana anterior, y por eso una semana de octubre regenerada en marzo sale como salía en octubre.</p>
+
+    <ol class="secuencia">
+      <li>
+        <h4>Genera la semana</h4>
+        <p><code class="via">Sábana <i>▸</i> GENERAR LA SÁBANA DE LA SEMANA</code> y elige el número. Pasa por cinco fases seguidas: esqueleto, sesiones, reparto, grises y grupos fuera.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>El resumen del final. Los días no lectivos de esa semana tienen que salir en gris, y los grupos que están de salida, en naranja.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Valídala</h4>
+        <p><code class="via">Sábana <i>▸</i> Validar la sábana</code>. Valida la pestaña que tengas delante; si no estás sobre una semana, valida la base.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>Que no quede ningún <strong>ERROR</strong>. Los avisos se leen y se decide; los errores se arreglan antes de publicar, porque la publicación se niega a salir con uno.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="nota ojo">
+      <div class="titulo">Regenerar borra</div>
+      <p>Volver a generar una semana ya trabajada se lleva por delante lo que hayas escrito a mano en ella: ausencias marcadas, sustituciones y cambios. Lo que <strong>no</strong> se borra son las filas de <code>_Ausencias</code>: eso es la memoria del curso, y lo que pasó sigue habiendo pasado.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Lo del día</span>
+    <h2>Una ausencia, de principio a fin</h2>
+    <p>Cinco pasos en orden. El asistente busca los huecos, ordena a los candidatos y escribe con el formato bueno; elegir sigue siendo cosa tuya, y cada candidato lleva escrito de dónde sale para que la excepción se vea.</p>
+
+    <ol class="secuencia">
+      <li>
+        <h4>Marca quién falta</h4>
+        <p>Selecciona en la sábana las celdas de esa persona —una fila, un tramo de columnas, y a saltos con Ctrl si falta media mañana— y lanza <code class="via">Sábana <i>▸</i> Marcar la ausencia de la selección</code>.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>Una <strong>X roja grande sobre amarillo</strong> en cada celda. Lo que había antes queda guardado en la nota de la celda, y es lo que permite deshacerlo después.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Pregunta quién puede cubrir</h4>
+        <p><code class="via">Sábana <i>▸</i> Ver los huecos por cubrir</code>. No hace falta seleccionar nada: recorre la semana entera y recoge todas las X, así que aparecen juntas las ausencias que se han ido marcando estos días. El informe queda en <code>_Candidatos</code> y <strong>no escribe nada en la sábana</strong>.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>Los huecos que ya están resueltos no salen, y el aviso dice cuántos ha descartado: «no sale» y «está resuelto» no son lo mismo. El orden de los candidatos es compañero de desdoble, grupo fuera, G1, G2 y libres. Es el orden habitual, no una regla.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Elige y escribe</h4>
+        <p>Hay dos caminos y los dos escriben por el mismo sitio, así que usa el que te resulte natural:</p>
+        <ul>
+          <li>Desde <code>_Candidatos</code>: elige en el desplegable de cada fila y lanza <code class="via">Sábana <i>▸</i> ESCRIBIR LAS SUSTITUCIONES ELEGIDAS</code>.</li>
+          <li>Desde la sábana: marca la celda de quien va a cubrir y lanza <code class="via">Sábana <i>▸</i> Escribir la sustitución de la selección</code>. La hora la dice la columna; si a esa hora falta más de uno, marca también su X.</li>
+        </ul>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>Al sustituto se le escribe la clase del ausente tal cual, con su grupo y su materia. La excepción es el compañero de desdoble: conserva su propia clase, con el curso a 30, porque se queda con todos los alumnos y sigue con lo suyo.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Cuadra las guardias</h4>
+        <p>Se hace solo al escribir las sustituciones. A mano está en <code class="via">Sábana <i>▸</i> Ajustar las guardias (G2 sube a G1)</code>, y se puede lanzar las veces que haga falta y en el orden que sea: mira cómo está la hoja, no lo que acabas de hacer.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>La G1 que sube va a treinta puntos, en amarillo y rojo. Se ve de lejos que esa guardia no es la de la base, que es exactamente lo que hay que ver.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Escribe el motivo</h4>
+        <p>La ausencia ya está anotada en <code>_Ausencias</code> con su semana, su fecha, su sesión y quién. El motivo va a mano, en su columna: es texto libre y no se resume, porque contar cuántas veces se repite una frase escrita a mano sería inventarse una estadística.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p><code class="via">Sábana <i>▸</i> Ver los totales del curso</code> reescribe <code>_Totales</code> entera a partir del registro: sale el claustro completo con sus ceros y en el orden de <code>_Profesores</code>, porque a esa pestaña se viene a buscar a una persona. El ranking va en el aviso.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="nota">
+      <div class="titulo">A una reunión no se manda a nadie en tu lugar</div>
+      <p>Faltar a una reunión se anota y se cuenta en su columna, porque es historia igual, pero no abre hueco: no deja a nadie sin atender. Por eso no suma con las demás faltas.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Rectificar</span>
+    <h2>Deshacer lo escrito</h2>
+    <p>Selecciona las celdas y lanza <code class="via">Sábana <i>▸</i> Deshacer lo escrito en la selección</code>. Vale para los tres casos: una ausencia, una sustitución y una guardia que subió. El texto vuelve desde la nota, y el color no se recupera de ninguna parte: se vuelve a calcular preguntándole al mismo sitio que lo decidió.</p>
+    <ul>
+      <li><strong>Deshacer una ausencia se lleva las sustituciones que la cubrían</strong>, porque ya no cubren nada. Al revés no: quitar una sustitución deja el hueco otra vez abierto, que es una situación normal.</li>
+      <li><strong>Deshacer una ausencia borra su fila de <code>_Ausencias</code></strong>, porque estás diciendo que aquello no fue así.</li>
+      <li><strong>Las guardias no se rebajan solas.</strong> Deshacer es lo que se hace cuando uno quiere quitar algo, y volver a tocarlo acto seguido sería discutir contigo. Si quieres que la G2 vuelva a su sitio, lanza <code class="via">Ajustar las guardias</code> después.</li>
+    </ul>
+    <div class="nota ojo">
+      <div class="titulo">Lo único que no vuelve</div>
+      <p>Un color que hayas puesto tú a mano en una celda. Todo lo demás se recalcula; ese no está escrito en ninguna parte.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Cambios entre profesores</span>
+    <h2>Los cambios se hacen a mano y se marcan después</h2>
+    <p>Los cambios se hacen a tres bandas y a cuatro. No se automatizan, y esa renuncia es la gracia: un programa que los escribiera tendría que sabérselas todas, y comparar contra la base no se sabe ninguna. Coge cualquier cosa que se haya tocado a mano, la entienda o no.</p>
+    <p>Edita las celdas que hagan falta y lanza <code class="via">Sábana <i>▸</i> Marcar los cambios respecto a la base</code>. Genera en ese momento la base que le tocaría a esa semana, la compara, y pinta en amarillo todo lo que no coincide. El listado —con quién, cuándo, qué había y qué hay— queda en <code>_Cambios</code>, y es lo que va al boletín.</p>
+    <p><strong>Se despinta solo.</strong> Si deshaces un cambio y vuelves a lanzarlo, ese amarillo se va: una celda que ya no varía no es una variación. Puedes lanzarlo tantas veces como quieras a lo largo de la semana.</p>
+    <div class="nota">
+      <div class="titulo">Un cambio no es una ausencia</div>
+      <p>Un cambio no se anota en <code>_Ausencias</code>, porque nadie ha faltado. Un centro educativo está vivo y sujeto a cambios: que a alguien le cambien muchas horas no dice que se ausente ni que haga mal su trabajo, y contarlo sería construir un número que se lee como un reproche. Si una ausencia se acaba resolviendo con un cambio, deshaz la ausencia.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">El viernes</span>
+    <h2>Publicar el PDF de la semana</h2>
+    <p>Ponte sobre la pestaña de la semana que vas a publicar y lanza <code class="via">Sábana <i>▸</i> PUBLICAR EL PDF DE LA SEMANA</code>.</p>
+    <p>Antes de exportar valida, y es el mismo veredicto que enseña «Validar la sábana», no una segunda opinión: <strong>con un error no publica</strong>, y con un aviso te pregunta. Después te enseña dónde va a dejarlo y espera tu confirmación. Si ya había un PDF de esa semana, lo manda a la papelera y deja el nuevo.</p>
+    <p>El archivo sale como <code>semana_3-horario.pdf</code> y va a la carpeta del boletín de esa semana, que es la del <strong>viernes anterior al lunes</strong>: la semana que empieza el 14 de septiembre va en la carpeta <code>20260911</code>, porque el boletín sale el viernes con la sábana de la semana siguiente.</p>
+    <div class="nota ojo">
+      <div class="titulo">Si dice que no encuentra la carpeta</div>
+      <p>No la crea, y no es un fallo suyo: la carpeta la crea el sistema de la <a href="hoja-de-avisos.html">Hoja de Avisos</a> con una semana de antelación, así que faltar significa que algo no ha corrido por allí. Si encuentra <strong>dos</strong> con el mismo nombre, también se para: no hay forma de saber cuál es la buena, y el correo al claustro saldría con la que no es.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Leer la sábana</span>
+    <h2>Qué dice cada color</h2>
+    <p>El color no es decoración: es la respuesta ya calculada, con el horario, las horas prohibidas, las tardes y los festivos ya metidos dentro. El asistente le pregunta al color quién está libre, así que lo que ves en la hoja es exactamente lo que él ve.</p>
+
+    <div class="colores">
+      <div class="color">
+        <div class="celda" style="background:#fff"></div>
+        <div class="dice"><b>Blanco · está y está libre</b><span>En el centro y sin tarea a esa hora. Es el primer sitio donde mirar para cubrir un hueco.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--sin-tarea)"></div>
+        <div class="dice"><b>Gris · aquí no tiene nada que hacer</b><span>No está en el centro, o es una tarde en la que no se queda, o el día no es lectivo.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--g1)">G1</div>
+        <div class="dice"><b>Rosa · primera guardia</b><span>Le toca guardia, y es el primero en salir si hay que cubrir algo.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--g2)">G2</div>
+        <div class="dice"><b>Ámbar · segunda guardia</b><span>Sube a primera en cuanto esa hora se queda sin ella.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--recreo-eso)">RE</div>
+        <div class="dice"><b>Azul · recreo de ESO</b><span>Vigilancia de patio. Quien coge un recreo cualquier día baja en los desplegables de todos los demás.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--recreo-bach)">RB</div>
+        <div class="dice"><b>Verde · recreo de Bachillerato</b><span>Lo mismo en el otro patio. Un RE y un RB no se juntan en la misma persona.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--grupo-fuera)"></div>
+        <div class="dice"><b>Naranja · su grupo está fuera</b><span>Tiene clase, pero ese grupo está de salida esa semana. Ahí no hay nada que cubrir, y esa persona está disponible.</span></div>
+      </div>
+      <div class="color">
+        <div class="celda" style="background:var(--cambio);color:var(--cambio-tinta)">X</div>
+        <div class="dice"><b>Amarillo · esta semana no es como la base</b><span>Una ausencia, una sustitución, una guardia que subió o un cambio a mano. En rojo y en negrita para verlo de lejos.</span></div>
+      </div>
+    </div>
+
+    <p>Las guardias y los recreos van a treinta puntos y las clases al tamaño normal. Es para leer la hoja impresa a un metro de distancia, que es como se lee en el departamento.</p>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Una vez por curso</span>
+    <h2>Montar el curso en septiembre</h2>
+    <p>Todo cuelga de <code class="via">Mantenimiento</code>, y va en este orden: cada paso da por hecho el anterior.</p>
+
+    <ol class="secuencia">
+      <li>
+        <h4>Crea las pestañas de configuración</h4>
+        <p><code class="via">Preparar el curso <i>▸</i> Crear configuración inicial</code>. Se puede relanzar sin miedo: no borra ni pisa nada que ya exista.</p>
+        <div class="mira">
+          <div class="titulo">Y también después</div>
+          <p>Lánzalo cuando el programa añada una columna nueva a una pestaña. Una columna que falta <strong>no da error</strong>: quien la lee tira con el valor de siempre y se calla. «Revisar el libro» sí lo denuncia.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Apunta el XML y tráelo</h4>
+        <p>Pega el ID del archivo XML de Peñalara en la clave <code>ID_XML_GHC</code> de <code>_Config</code> y lanza <code class="via">Preparar el curso <i>▸</i> Importar XML de Peñalara</code>.</p>
+        <div class="mira">
+          <div class="titulo">Qué mirar</div>
+          <p>Este es <strong>el paso que se olvida</strong>. Sin actualizar el ID, la importación tira del archivo del año pasado y no dice nada. Reimportar nunca borra filas ni pisa lo que has escrito tú: las columnas del XML se sobrescriben y las tuyas solo si están vacías.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Vuelca el horario</h4>
+        <p><code class="via">Preparar el curso <i>▸</i> Volcar el horario del XML</code> rellena <code>_Horario</code>. <strong>A partir de aquí manda la hoja, no el XML</strong>: ajustar el horario de alguien a mitad de curso es editar una celda.</p>
+      </li>
+      <li>
+        <h4>Da de alta a quien no viene de Peñalara</h4>
+        <p>Los monitores de estudio van en <code>_Profesores</code> como todo el mundo, con <strong>«En Peñalara» a No</strong> para que el importador no los eche de menos cada septiembre. Después lanza <code class="via">Preparar el curso <i>▸</i> Dar horario a quien no viene del XML</code>, que les escribe su fila en <code>_Horario</code>.</p>
+        <div class="mira">
+          <div class="titulo">Por qué hace falta esa fila</div>
+          <p>Sin ella salen en blanco toda la semana, y el blanco significa «está aquí y libre». Se les pone FUERA en todo menos las tardes, que las gobiernan las casillas T-L…T-J de <code>_Profesores</code>.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Carga el calendario y calcula las semanas</h4>
+        <p>El calendario se escribe a mano en <code>_Calendario</code> —festivos, no lectivos y vacaciones, con su desde y su hasta—. Son cinco minutos una vez por curso. Luego <code class="via">Preparar el curso <i>▸</i> Generar las semanas del curso</code> calcula <code>_Semanas</code>.</p>
+        <div class="mira">
+          <div class="titulo">Por qué eso sí se calcula</div>
+          <p>Porque es aritmética, no transcripción. Contar cuarenta lunes a mano es justo donde se cuela el error que luego fecha mal una sábana, y ese error no se ve: la semana sale con una fecha plausible que resulta ser la de otra.</p>
+        </div>
+      </li>
+      <li>
+        <h4>Reparte guardias, recreos y estudios</h4>
+        <p><code class="via">Guardias, recreos y estudios <i>▸</i> Preparar guardias, recreos y estudios</code> monta las tres pestañas con un desplegable por celda, filtrado a quien está realmente disponible y ordenado por lejanía al cupo. Se rellenan a mano y el contador va en vivo.</p>
+      </li>
+      <li>
+        <h4>Genera la base y valídala</h4>
+        <p><code class="via">Mantenimiento <i>▸</i> Generar la base del curso</code>. El reparto entra dentro de la cascada, así que no hay que volcarlo aparte. Termina con <code class="via">Sábana <i>▸</i> Validar la sábana</code> sobre la base.</p>
+        <div class="mira">
+          <div class="titulo">Para qué sirve la base</div>
+          <p>Nada la lee para generar una semana. Lo que hace es ser el banco de pruebas: generarla y validarla dice si la configuración cuadra <strong>antes</strong> de que exista ninguna semana real. Y después, la foto del curso sin ausencias encima contra la que se comparan los cambios.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="nota">
+      <div class="titulo">Si tocas el reparto con el curso ya empezado</div>
+      <p><code class="via">Guardias, recreos y estudios <i>▸</i> Volcar el reparto a la base</code> lleva los cambios sin regenerarla entera. <code class="via">Vaciar lo que ya no encaja</code> quita solo las asignaciones que han dejado de ser posibles; <code class="via">Vaciar el reparto entero</code> las quita todas, y eso sí es empezar de cero.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Diagnóstico</span>
+    <h2>Cuando algo se tuerce</h2>
+    <p>Tres comprobaciones, en <code class="via">Mantenimiento <i>▸</i> Comprobaciones</code>:</p>
+
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Comprobación</th><th>Para qué</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Revisar el libro</td>
+            <td class="desc">Lo primero que hay que lanzar cuando algo va raro <strong>sin dar error</strong>. Cruza las pestañas entre sí: quién está en <code>_Profesores</code> y no en <code>_Horario</code>, y al revés; y qué columnas declaradas le faltan a una pestaña de configuración.</td>
+          </tr>
+          <tr>
+            <td>Comprobar las celdas</td>
+            <td class="desc">Revisa el contenido de la sábana: textos que no se reconocen, grupos que no existen, celdas que no cuadran con el vocabulario.</td>
+          </tr>
+          <tr>
+            <td>Inspeccionar el XML</td>
+            <td class="desc">Enseña lo que trae Peñalara antes de importarlo. Para cuando la duda es «esto, ¿viene así del XML?».</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Alguien sale en blanco toda la semana</h3>
+    <p>Le falta su fila en <code>_Horario</code>. Es lo que le pasa a quien se da de alta a mano. Lánzale <code class="via">Dar horario a quien no viene del XML</code>.</p>
+
+    <h3>No aparece en el desplegable de un estudio o una guardia</h3>
+    <p>Los desplegables se construyen desde <code>_Horario</code>, no desde <code>_Profesores</code>. Marcarle la tarde en <code>_Profesores</code> no basta si no tiene su fila de horario.</p>
+
+    <h3>Un paso de la generación falla</h3>
+    <p>En <code class="via">Mantenimiento <i>▸</i> Generar paso a paso</code> están los pasos sueltos, en su orden: esqueleto, sesiones, grises y grupos fuera —el reparto tiene su propia entrada—. Lanzar solo el que falla es lo que permite averiguar cuál es.</p>
+    <p>Ojo a la diferencia que llevan escrita en el nombre: los grupos fuera dicen <strong>«de esta pestaña»</strong> y se pueden relanzar sobre una semana ya trabajada, porque no tocan las clases. Los demás reescriben desde <code>_Horario</code> y van siempre a la base: sobre una semana con sustituciones se las llevarían por delante.</p>
+
+    <h3>Las pestañas auxiliares estorban</h3>
+    <p><code class="via">Mantenimiento <i>▸</i> Ocultar las pestañas auxiliares</code> esconde todas las que empiezan por guion bajo, y la otra entrada las devuelve. Ocultarlas no las apaga: la pestaña que tiene algo que decir se muestra sola cuando le toca.</p>
+  </section>
+
+  <hr class="separador">
+
+  <section>
+    <span class="etiqueta">Referencia</span>
+    <h2>Chuleta del menú Sábana</h2>
+    <p>Lo que se usa cada mañana, en el orden en que está en el menú.</p>
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Entrada</th><th>Qué hace</th><th>Dónde deja el resultado</th></tr></thead>
+        <tbody>
+          <tr><td>GENERAR LA SÁBANA DE LA SEMANA</td><td class="desc">Rehace la semana entera desde cero</td><td class="desc">La pestaña de la semana</td></tr>
+          <tr><td>Validar la sábana</td><td class="desc">Errores y avisos de la pestaña que tengas delante</td><td class="desc"><code>_Validación</code></td></tr>
+          <tr><td>Marcar los cambios respecto a la base</td><td class="desc">Pinta en amarillo lo que no coincide con la base</td><td class="desc"><code>_Cambios</code></td></tr>
+          <tr><td>PUBLICAR EL PDF DE LA SEMANA</td><td class="desc">Valida, exporta y lo deja en la carpeta del boletín</td><td class="desc">El PDF, en Drive</td></tr>
+          <tr><td>Marcar la ausencia de la selección</td><td class="desc">Escribe la X y guarda en la nota lo que había</td><td class="desc"><code>_Ausencias</code></td></tr>
+          <tr><td>Ver los huecos por cubrir</td><td class="desc">Busca las X de la semana y propone candidatos</td><td class="desc"><code>_Candidatos</code></td></tr>
+          <tr><td>ESCRIBIR LAS SUSTITUCIONES ELEGIDAS</td><td class="desc">Escribe lo elegido en los desplegables</td><td class="desc">La sábana</td></tr>
+          <tr><td>Escribir la sustitución de la selección</td><td class="desc">Lo mismo, decidiéndolo sobre la sábana</td><td class="desc">La sábana</td></tr>
+          <tr><td>Ajustar las guardias (G2 sube a G1)</td><td class="desc">Sube la segunda guardia donde falta la primera</td><td class="desc">La sábana</td></tr>
+          <tr><td>Deshacer lo escrito en la selección</td><td class="desc">Devuelve el texto, el color y la nota</td><td class="desc">La sábana</td></tr>
+          <tr><td>Ver los totales del curso</td><td class="desc">Suma el registro de ausencias de arriba abajo</td><td class="desc"><code>_Totales</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cierre">
+  <div class="envoltorio">
+    <h2>Si algo no cuadra</h2>
+    <p>Basta con decirlo. Casi todo se arregla en la hoja en dos minutos, y lo que no, se mira con calma: nada de lo que hace el programa es irreversible, y todo lo que escribe se puede deshacer desde el mismo menú.</p>
+    <p>Lo que sí conviene: cuando una semana algo salga raro o incómodo, apuntarlo. Las mejores decisiones de este sistema —no automatizar los cambios, callar los avisos que saltaban siempre, retirar el cuadrante— han salido justo de ahí.</p>
+    <p class="pie">Sábana horaria · CDP Torrealba · Manual de uso · Septiembre de 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
