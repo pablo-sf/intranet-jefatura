@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/base.css?v=7">
-<link rel="stylesheet" href="assets/css/sabana.css?v=1">
+<link rel="stylesheet" href="assets/css/sabana.css?v=2">
 <script src="assets/js/nav.js?v=1" defer></script>
 </head>
 <body>
@@ -112,18 +112,27 @@
         <div class="mira">
           <div class="titulo">Qué mirar</div>
           <p>Los huecos que ya están resueltos no salen, y el aviso dice cuántos ha descartado: «no sale» y «está resuelto» no son lo mismo. El orden de los candidatos es compañero de desdoble, grupo fuera, G1, G2 y libres. Es el orden habitual, no una regla.</p>
+          <p>Delante de todos ellos hay una columna más, <strong>«Cambio posible»</strong>. Es la otra manera de tapar el hueco y va primero porque es mejor que cualquier sustituto: tiene su propia sección aquí abajo.</p>
         </div>
       </li>
       <li>
         <h4>Elige y escribe</h4>
-        <p>Hay dos caminos y los dos escriben por el mismo sitio, así que usa el que te resulte natural:</p>
-        <ul>
-          <li>Desde <code>_Candidatos</code>: elige en el desplegable de cada fila y lanza <code class="via">Sábana <i>▸</i> ESCRIBIR LAS SUSTITUCIONES ELEGIDAS</code>.</li>
-          <li>Desde la sábana: marca la celda de quien va a cubrir y lanza <code class="via">Sábana <i>▸</i> Escribir la sustitución de la selección</code>. La hora la dice la columna; si a esa hora falta más de uno, marca también su X.</li>
-        </ul>
+        <p>En <code>_Candidatos</code> cada hueco se resuelve <strong>de una de las dos maneras, no de las dos</strong>:</p>
+        <div class="tabla-envoltorio">
+          <table>
+            <thead><tr><th>Columna</th><th>Qué decides ahí</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Elegido</strong></td><td class="desc">Quién se pone delante del grupo. El grupo pierde esa clase, pero está atendido.</td></tr>
+              <tr><td><strong>Hacer el cambio</strong></td><td class="desc">Mover dos clases de hora. El grupo tiene sus mismas clases en otro orden.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Rellenes la que rellenes, se escribe todo con <code class="via">Sábana <i>▸</i> ESCRIBIR LO ELEGIDO</code>. Un solo paso para las dos cosas.</p>
+        <p>Y hay un tercer camino para las sustituciones, si te resulta más natural decidir mirando la sábana: marca la celda de quien va a cubrir y lanza <code class="via">Sábana <i>▸</i> Escribir la sustitución de la selección</code>. La hora la dice la columna; si a esa hora falta más de uno, marca también su X.</p>
         <div class="mira">
           <div class="titulo">Qué mirar</div>
           <p>Al sustituto se le escribe la clase del ausente tal cual, con su grupo y su materia. La excepción es el compañero de desdoble: conserva su propia clase, con el curso a 30, porque se queda con todos los alumnos y sigue con lo suyo.</p>
+          <p>Si rellenas las dos columnas de la misma fila, esa fila se aparta y te lo dice. Es el mismo hueco: elegir cuál de las dos querías no le toca al programa.</p>
         </div>
       </li>
       <li>
@@ -153,13 +162,56 @@
   <hr class="separador">
 
   <section>
+    <span class="etiqueta">Lo del día</span>
+    <h2>El cambio de hora, cuando el grupo no tiene por qué perder su clase</h2>
+    <p>Todos los sustitutos que propone el asistente tienen algo en común: alguien se queda con el grupo, que es lo que hay que garantizar, pero <strong>la materia de esa hora no se da</strong>. El cambio de hora no cuesta eso.</p>
+    <p>Si otro profesor da a ese mismo grupo en otra hora de la semana y está libre justo a la hora del hueco, puede <strong>adelantar su clase</strong>. El que falta dará la suya al volver, en la hora que ha quedado libre. El grupo tiene sus mismas clases en otro orden, y no se gasta ninguna guardia.</p>
+    <p>Sale en la columna <strong>«Cambio posible»</strong>, hasta tres por hueco y con los mejores delante:</p>
+    <pre class="muestra">CAR · su Física del lunes 12:00 (mismo día) · limpio
+BEA · su Mates del jueves 8:30 · repite Mates el lunes
+DIE · su Inglés del martes 9:30 · gasta G1, hay desdoble</pre>
+    <p><strong>«Limpio» quiere decir tres cosas</strong>: que no gasta ninguna guardia, que no le deja al grupo la misma materia dos veces ese día, y que no parte ningún desdoble. Cuando falta alguna, va escrito cuál en vez del sello. Los limpios van primero, y después los del mismo día.</p>
+
+    <h3>Qué escribe</h3>
+    <p>Eliges en <strong>«Hacer el cambio»</strong> y lanzas <code class="via">Sábana <i>▸</i> ESCRIBIR LO ELEGIDO</code>. Son tres celdas, todas en amarillo:</p>
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Celda</th><th>Cómo queda</th></tr></thead>
+        <tbody>
+          <tr><td>El otro, a la hora del hueco</td><td class="desc">Su clase, adelantada</td></tr>
+          <tr><td>El otro, en su hora</td><td class="desc"><strong>Vacía</strong>: esa clase ya se ha dado</td></tr>
+          <tr><td>El que falta, en la hora del otro</td><td class="desc">La clase que se había perdido</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>La celda del ausente a la hora del hueco no se toca: su X sigue diciendo lo que dice, que ese día no está.</p>
+    <div class="mira">
+      <div class="titulo">Qué mirar</div>
+      <p>La del medio es la que importa. Si esa clase siguiera donde estaba, el profesor aparecería dándola dos veces, y eso no se ve hasta que lo dice la validación.</p>
+      <p>Vuelve a lanzar <code class="via">Ver los huecos por cubrir</code>: ese hueco ya no tiene que salir.</p>
+    </div>
+
+    <div class="nota ojo">
+      <div class="titulo">Lo que decide si un cambio sirve: cuánto dura la ausencia</div>
+      <p>Un cambio con el jueves solo tapa el hueco <strong>si esa persona ha vuelto el jueves</strong>. Si no, no cubre nada: mueve el agujero al jueves. Por eso solo se ofrecen cambios en horas donde el que falta está en el centro y libre, y sin ninguna otra X puesta. Si marcas la ausencia de toda la semana de golpe, verás que se ofrecen muchos menos, y es correcto.</p>
+    </div>
+    <div class="nota">
+      <div class="titulo">Un cambio no cuenta como sustitución</div>
+      <p>No se anota en <code>_Ausencias</code> ni suma en los totales del curso, porque no gasta guardia de nadie. El hueco queda resuelto en la sábana y ahí se acaba.</p>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section>
     <span class="etiqueta">Rectificar</span>
     <h2>Deshacer lo escrito</h2>
-    <p>Selecciona las celdas y lanza <code class="via">Sábana <i>▸</i> Deshacer lo escrito en la selección</code>. Vale para los tres casos: una ausencia, una sustitución y una guardia que subió. El texto vuelve desde la nota, y el color no se recupera de ninguna parte: se vuelve a calcular preguntándole al mismo sitio que lo decidió.</p>
+    <p>Selecciona las celdas y lanza <code class="via">Sábana <i>▸</i> Deshacer lo escrito en la selección</code>. Vale para los cuatro casos: una ausencia, una sustitución, una guardia que subió y un cambio de hora. El texto vuelve desde la nota, y el color no se recupera de ninguna parte: se vuelve a calcular preguntándole al mismo sitio que lo decidió.</p>
     <ul>
       <li><strong>Deshacer una ausencia se lleva las sustituciones que la cubrían</strong>, porque ya no cubren nada. Al revés no: quitar una sustitución deja el hueco otra vez abierto, que es una situación normal.</li>
       <li><strong>Deshacer una ausencia borra su fila de <code>_Ausencias</code></strong>, porque estás diciendo que aquello no fue así.</li>
       <li><strong>Las guardias no se rebajan solas.</strong> Deshacer es lo que se hace cuando uno quiere quitar algo, y volver a tocarlo acto seguido sería discutir contigo. Si quieres que la G2 vuelva a su sitio, lanza <code class="via">Ajustar las guardias</code> después.</li>
+      <li><strong>Un cambio de hora hay que seleccionarlo entero.</strong> Son tres celdas y están en dos días distintos, así que el arrastre no llega: márcalas las tres con Ctrl. Las tres van en amarillo y llevan su nota diciendo qué son, así que se localizan.</li>
     </ul>
     <div class="nota ojo">
       <div class="titulo">Lo único que no vuelve</div>
@@ -170,14 +222,18 @@
   <hr class="separador">
 
   <section>
-    <span class="etiqueta">Cambios entre profesores</span>
-    <h2>Los cambios se hacen a mano y se marcan después</h2>
-    <p>Los cambios se hacen a tres bandas y a cuatro. No se automatizan, y esa renuncia es la gracia: un programa que los escribiera tendría que sabérselas todas, y comparar contra la base no se sabe ninguna. Coge cualquier cosa que se haya tocado a mano, la entienda o no.</p>
+    <span class="etiqueta">Retoques</span>
+    <h2>Todo lo demás se toca a mano y se marca después</h2>
+    <div class="nota">
+      <div class="titulo">Ojo, que «cambio» quiere decir dos cosas</div>
+      <p>El <strong>cambio de hora</strong> de la sección de arriba es una permuta concreta para tapar un hueco, y esa sí la escribe el asistente. Aquí se habla de <strong>cualquier otro retoque</strong> que hagas tú sobre la sábana, que sigue sin automatizarse y no tiene por qué.</p>
+    </div>
+    <p>Los cambios de verdad se hacen a tres bandas y a cuatro. Ahí no se entra, y esa renuncia es la gracia: un programa que los escribiera tendría que sabérselas todas, y comparar contra la base no se sabe ninguna. Coge cualquier cosa que se haya tocado a mano, la entienda o no.</p>
     <p>Edita las celdas que hagan falta y lanza <code class="via">Sábana <i>▸</i> Marcar los cambios respecto a la base</code>. Genera en ese momento la base que le tocaría a esa semana, la compara, y pinta en amarillo todo lo que no coincide. El listado —con quién, cuándo, qué había y qué hay— queda en <code>_Cambios</code>, y es lo que va al boletín.</p>
     <p><strong>Se despinta solo.</strong> Si deshaces un cambio y vuelves a lanzarlo, ese amarillo se va: una celda que ya no varía no es una variación. Puedes lanzarlo tantas veces como quieras a lo largo de la semana.</p>
     <div class="nota">
       <div class="titulo">Un cambio no es una ausencia</div>
-      <p>Un cambio no se anota en <code>_Ausencias</code>, porque nadie ha faltado. Un centro educativo está vivo y sujeto a cambios: que a alguien le cambien muchas horas no dice que se ausente ni que haga mal su trabajo, y contarlo sería construir un número que se lee como un reproche. Si una ausencia se acaba resolviendo con un cambio, deshaz la ausencia.</p>
+      <p>Un retoque no se anota en <code>_Ausencias</code>, porque nadie ha faltado. Un centro educativo está vivo y sujeto a cambios: que a alguien le cambien muchas horas no dice que se ausente ni que haga mal su trabajo, y contarlo sería construir un número que se lee como un reproche.</p>
     </div>
   </section>
 
@@ -360,8 +416,8 @@
           <tr><td>Marcar los cambios respecto a la base</td><td class="desc">Pinta en amarillo lo que no coincide con la base</td><td class="desc"><code>_Cambios</code></td></tr>
           <tr><td>PUBLICAR EL PDF DE LA SEMANA</td><td class="desc">Valida, exporta y lo deja en la carpeta del boletín</td><td class="desc">El PDF, en Drive</td></tr>
           <tr><td>Marcar la ausencia de la selección</td><td class="desc">Escribe la X y guarda en la nota lo que había</td><td class="desc"><code>_Ausencias</code></td></tr>
-          <tr><td>Ver los huecos por cubrir</td><td class="desc">Busca las X de la semana y propone candidatos</td><td class="desc"><code>_Candidatos</code></td></tr>
-          <tr><td>ESCRIBIR LAS SUSTITUCIONES ELEGIDAS</td><td class="desc">Escribe lo elegido en los desplegables</td><td class="desc">La sábana</td></tr>
+          <tr><td>Ver los huecos por cubrir</td><td class="desc">Busca las X de la semana, propone candidatos y cambios de hora</td><td class="desc"><code>_Candidatos</code></td></tr>
+          <tr><td>ESCRIBIR LO ELEGIDO</td><td class="desc">Escribe las sustituciones y los cambios de hora, de una vez</td><td class="desc">La sábana</td></tr>
           <tr><td>Escribir la sustitución de la selección</td><td class="desc">Lo mismo, decidiéndolo sobre la sábana</td><td class="desc">La sábana</td></tr>
           <tr><td>Ajustar las guardias (G2 sube a G1)</td><td class="desc">Sube la segunda guardia donde falta la primera</td><td class="desc">La sábana</td></tr>
           <tr><td>Deshacer lo escrito en la selección</td><td class="desc">Devuelve el texto, el color y la nota</td><td class="desc">La sábana</td></tr>
@@ -377,7 +433,7 @@
   <div class="envoltorio">
     <h2>Si algo no cuadra</h2>
     <p>Basta con decirlo. Casi todo se arregla en la hoja en dos minutos, y lo que no, se mira con calma: nada de lo que hace el programa es irreversible, y todo lo que escribe se puede deshacer desde el mismo menú.</p>
-    <p>Lo que sí conviene: cuando una semana algo salga raro o incómodo, apuntarlo. Las mejores decisiones de este sistema —no automatizar los cambios, callar los avisos que saltaban siempre, retirar el cuadrante— han salido justo de ahí.</p>
+    <p>Lo que sí conviene: cuando una semana algo salga raro o incómodo, apuntarlo. Las mejores decisiones de este sistema han salido justo de ahí: retirar el cuadrante que envejecía en silencio, callar los avisos que saltaban siempre, juntar en un solo botón lo que eran dos pasos que se pisaban, y dejar que el asistente escriba el cambio de hora, que son tres celdas en dos días y es justo donde se cuelan los despistes.</p>
     <p class="pie">Sábana horaria · CDP Torrealba · Manual de uso · Septiembre de 2026</p>
   </div>
 </footer>
