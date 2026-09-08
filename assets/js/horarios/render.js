@@ -45,8 +45,15 @@ function construirPaleta(items, semilla){
 function construirTabla(datos, modo, nombre){
   const items = (modo==="prof" ? datos.porProf : datos.porGrupo).get(nombre) || [];
   const paleta = construirPaleta(items, nombre);
-  const dias = [...new Set(items.map(i=>i.dia))].sort((a,b)=>a-b);
-  const diasVista = dias.length ? [...Array(Math.max(...dias)+1).keys()] : [0,1,2,3,4];
+  
+  // Recopilar todos los días posibles: de todos los profesores y grupos.
+  // Así un día que no tiene este profesor pero sí tiene otro aparecerá
+  // como una columna vacía en lugar de desaparecer completamente.
+  const diasSet = new Set();
+  [...datos.porProf.values()].flat().forEach(i => diasSet.add(i.dia));
+  [...datos.porGrupo.values()].flat().forEach(i => diasSet.add(i.dia));
+  const diasDisponibles = [...diasSet].sort((a,b)=>a-b);
+  const diasVista = diasDisponibles.length ? [...Array(Math.max(...diasDisponibles)+1).keys()] : [0,1,2,3,4];
 
   const franjas = new Map();
   // Recopilar todas las franjas posibles: de todos los profesores y grupos.
