@@ -49,7 +49,11 @@ function construirTabla(datos, modo, nombre){
   const diasVista = dias.length ? [...Array(Math.max(...dias)+1).keys()] : [0,1,2,3,4];
 
   const franjas = new Map();
-  items.forEach(i => franjas.set(i.ini+"|"+i.fin, {ini:i.ini, fin:i.fin}));
+  // Recopilar todas las franjas posibles: de todos los profesores y grupos.
+  // Así una franja que no tiene este profesor pero sí tiene otro aparecerá
+  // como una fila vacía en lugar de desaparecer completamente.
+  [...datos.porProf.values()].flat().forEach(i => franjas.set(i.ini+"|"+i.fin, {ini:i.ini, fin:i.fin}));
+  [...datos.porGrupo.values()].flat().forEach(i => franjas.set(i.ini+"|"+i.fin, {ini:i.ini, fin:i.fin}));
   datos.recreos.forEach(r => franjas.set(r.ini+"|"+r.fin, {...r, recreo:true}));
   const filas = [...franjas.values()].sort((a,b)=> a.ini.localeCompare(b.ini) || a.fin.localeCompare(b.fin));
 
